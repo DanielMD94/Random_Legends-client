@@ -1,4 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
+import './SkinsCarouselComponent.css'
 
 function SkinsCarousel({ carouselChamp }) {
     console.log('soy carousel', carouselChamp)

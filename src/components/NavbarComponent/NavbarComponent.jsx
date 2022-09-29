@@ -1,6 +1,6 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-
+import './NavbarComponent.css'
 const NavbarComponent = () => {
     return (
         <Navbar bg='dark' variant='dark'>

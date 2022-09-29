@@ -1,5 +1,6 @@
 import { Card, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import './ChampionListComponent.css'
 
 const ChampionListComponent = ({ myChampion }) => {
     console.log('soy MYCHAMPION', myChampion)

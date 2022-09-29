@@ -1,0 +1,14 @@
+.NavbarLogo {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.link-react {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+.link-react:hover {
+    color: #c79b3b;
+}

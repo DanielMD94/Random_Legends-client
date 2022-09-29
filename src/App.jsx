@@ -1,14 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import NavbarComponent from './components/NavbarComponent';
-import ChampionsPage from './pages/ChampionsPage';
-import HomePage from './pages/HomePage';
-import LoginPage from './pages/LoginPage';
-import OneChampPage from './pages/OneChampPage';
-import RandomPickPage from './pages/RandomPickPage';
-import RotationPage from './pages/RotationPage';
-import SignupPage from './pages/SignupPage';
+import NavbarComponent from './components/NavbarComponent/NavbarComponent';
+import ChampionListPage from './pages/ChampionList/ChampionListPage';
+import HomePage from './pages/Home/HomePage';
+import LoginPage from './pages/Login/LoginPage';
+import OneChampPage from './pages/OneChamp/OneChampPage';
+import RandomPickPage from './pages/RandomPick/RandomPickPage';
+import RotationPage from './pages/Rotation/RotationPage';
+import SignupPage from './pages/Signup/SignupPage';
 
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
         <Route path='/login' element={<LoginPage />} />
         <Route path='/signup' element={<SignupPage />} />
         <Route path='/randomPick' element={<RandomPickPage />} />
-        <Route path='/champions' element={<ChampionsPage />} />
+        <Route path='/champions' element={<ChampionListPage />} />
         <Route path='/weekly-rotation' element={<RotationPage />} />
         <Route path='/champion-details/:name' element={<OneChampPage />} />
 

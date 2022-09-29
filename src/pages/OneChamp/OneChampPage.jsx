@@ -1,9 +1,9 @@
+import "./OneChampPage.css"
 import { useEffect, useState } from "react";
-import { Carousel, Spinner } from "react-bootstrap";
+import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
-import CarouselFade from "../components/SkinsCarouselComponent";
-import OneChampComponent from "../components/OneChampComponent"
-import IndexAxios from "../services/indexAxios"
+import IndexAxios from "../../services/indexAxios"
+import OneChampComponent from "../../components/OneChampComponent/OneChampComponent";
 
 const OneChampPage = () => {
     const { name } = useParams();

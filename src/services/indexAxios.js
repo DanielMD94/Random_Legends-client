@@ -17,6 +17,10 @@ class IndexAxios extends InitAxios {
         return this.axios.get(`/randomPick`).then((response) => response.data)
     }
 
+    getWeeklyRotation() {
+        return this.axios.get(`/weeklyRotation`).then((response) => response.data)
+    }
+
 }
 export default IndexAxios;
 

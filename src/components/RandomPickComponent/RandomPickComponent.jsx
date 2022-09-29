@@ -1,5 +1,7 @@
 import { Card, Row } from "react-bootstrap";
 import React from "react";
+import './RandomPickComponent.css'
+
 
 const refreshPage = () => {
     window.location.reload();

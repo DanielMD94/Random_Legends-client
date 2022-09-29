@@ -1,6 +1,7 @@
 import { Card, Carousel } from "react-bootstrap"
 import { Link } from "react-router-dom"
-import SkinsCarousel from "./SkinsCarouselComponent"
+import SkinsCarousel from "../SkinsCarouselComponent/SkinsCarouselComponent"
+import './OneChampComponent.css'
 
 const OneChampComponent = ({ oneChamp }) => {
     console.log('soyONECHAMPPPPP', oneChamp)

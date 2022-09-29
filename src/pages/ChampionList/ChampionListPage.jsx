@@ -1,8 +1,8 @@
+import "./ChampionListPage.css"
 import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
-import ChampionListComponent from "../components/ChampionListComponent";
-import IndexAxios from "../services/indexAxios";
-
+import ChampionListComponent from "../../components/ChampionListComponent/ChampionListComponent";
+import IndexAxios from "../../services/indexAxios";
 
 const ChampionsPage = () => {
     const indexAxios = new IndexAxios()

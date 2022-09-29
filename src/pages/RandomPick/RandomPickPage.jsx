@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Spinner } from "react-bootstrap";
-import RandomPickComponent from "../components/RandomPickComponent";
-import IndexAxios from "../services/indexAxios";
+import RandomPickComponent from "../../components/RandomPickComponent/RandomPickComponent";
+import IndexAxios from "../../services/indexAxios";
+import "./RandomPickPage.css"
 
 const RandomPickPage = () => {
     const indexAxios = new IndexAxios()
