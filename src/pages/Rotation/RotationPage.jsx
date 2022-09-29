@@ -11,6 +11,7 @@ const RotationPage = () => {
         indexAxios.getWeeklyRotation()
             .then((championsAndImgs) => {
                 setWeekChampions(championsAndImgs);
+                console.log("soy champs and imgs", championsAndImgs)
             })
             .catch((err) => console.log(err))
     }, [])
@@ -23,7 +24,7 @@ const RotationPage = () => {
             : <div className="ChampionListCard">
                 {weekChampions.map((champion) => {
                     return (
-                        <div key={champion.id} className="col-4">
+                        <div key={champion.name} className="col-3">
                             < RotationComponent
                                 myChampion={champion}
                                 img={champion.img} />

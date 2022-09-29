@@ -1,0 +1,54 @@
+.homePage {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.myVideo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 50;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    margin-top: 13%;
+}
+
+.content img {
+    width: 70%;
+    z-index: 70;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 60;
+}
+
+.homeBtnAlign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.homeBtn {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2rem;
+    width: auto;
+    color: white;
+    border: 5px solid white;
+    border-radius: 30%;
+    text-decoration: none;
+    padding: 10px;
+    z-index: 100;
+}
+
+.homeBtn:hover {
+    color: #c79b3b;
+}

@@ -1,0 +1,10 @@
+.ChampionListName {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-decoration: none;
+    color: #000a12;
+    ;
+}
+
+.ChampionListName:hover {
+    color: #c79b3b;
+}

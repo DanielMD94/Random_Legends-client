@@ -4,7 +4,7 @@ import { Spinner } from "react-bootstrap";
 import ChampionListComponent from "../../components/ChampionListComponent/ChampionListComponent";
 import IndexAxios from "../../services/indexAxios";
 
-const ChampionsPage = () => {
+const ChampionListPage = () => {
     const indexAxios = new IndexAxios()
     const [champions, setAllChampions] = useState([])
 
@@ -38,4 +38,4 @@ const ChampionsPage = () => {
 
 }
 
-export default ChampionsPage;
+export default ChampionListPage;
