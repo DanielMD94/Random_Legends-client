@@ -17,6 +17,9 @@ const NavbarComponent = () => {
                         <Link className='link-react' to="/signup">Sign Up</Link>
                     </Nav.Link>
                     <Nav.Link as='span'>
+                        <Link className='link-react' to="/profile/:id">My Profile</Link>
+                    </Nav.Link>
+                    <Nav.Link as='span'>
                         <Link className='link-react' to="/randomPick">Random Pick</Link>
                     </Nav.Link>
                     <Nav.Link as='span'>

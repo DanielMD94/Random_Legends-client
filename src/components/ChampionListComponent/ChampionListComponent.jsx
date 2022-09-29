@@ -5,7 +5,7 @@ import './ChampionListComponent.css'
 const ChampionListComponent = ({ myChampion }) => {
     console.log('soy MYCHAMPION', myChampion)
     return (
-        <Link className="ChampionListLink" to={`/champion-details/${myChampion.name}`}>
+        <Link className="ChampionListName" to={`/champion-details/${myChampion.name}`}>
             <div className="card">
                 <Card.Img className="GalleryCardImg img-fluid" src={myChampion.img} />
                 <Card.Body>
@@ -13,7 +13,6 @@ const ChampionListComponent = ({ myChampion }) => {
                 </Card.Body>
             </div>
         </Link>
-
     )
 }
 

@@ -36,8 +36,6 @@ const OneChampPage = () => {
 
     )
 
-
 }
 
 export default OneChampPage
-

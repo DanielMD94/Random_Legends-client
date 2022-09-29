@@ -7,9 +7,7 @@ import "./RandomPickPage.css"
 const RandomPickPage = () => {
     const indexAxios = new IndexAxios()
     const [random, setRandom] = useState(null)
-    const refresh = () => {
-        setRandom({});
-    }
+    const [refresh, setRefresh] = useState(null)
 
     useEffect(() => {
         indexAxios
@@ -18,9 +16,7 @@ const RandomPickPage = () => {
                 setRandom(randomImgs);
             })
             .catch((err) => console.log(err))
-    }, [])
-
-
+    }, [refresh])
 
     if (!random) {
         return (
@@ -34,7 +30,7 @@ const RandomPickPage = () => {
         <Container>
             <Row className="d-flex justify-content-center">
                 < RandomPickComponent
-                    myChampion={random}
+                    myChampion={{ random, setRefresh }}
                 />
             </Row>
         </Container>
