@@ -1,0 +1,24 @@
+import { Route, Routes } from 'react-router-dom';
+import HomePage from '../pages/Home/HomePage';
+import LoginPage from '../pages/Login/LoginPage';
+import OneChampPage from '../pages/OneChamp/OneChampPage';
+import RandomPickPage from '../pages/RandomPick/RandomPickPage';
+import RotationPage from '../pages/Rotation/RotationPage';
+import SignupPage from '../pages/Signup/SignupPage';
+import ChampionsPage from '../pages/ChampionListPage/ChampionListPage';
+
+const AppRoutes = () => {
+    return (
+        <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/signup' element={<SignupPage />} />
+            <Route path='/randomPick' element={<RandomPickPage />} />
+            <Route path='/champions' element={<ChampionsPage />} />
+            <Route path='/weekly-rotation' element={<RotationPage />} />
+            <Route path='/champion-details/:name' element={<OneChampPage />} />
+        </Routes>
+    )
+}
+
+export default AppRoutes

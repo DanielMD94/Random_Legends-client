@@ -2,7 +2,7 @@ import InitAxios from "./initAxios";
 
 class IndexAxios extends InitAxios {
     constructor() {
-        super()
+        super('')
     }
 
     getChampionList() {
