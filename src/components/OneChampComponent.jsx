@@ -1,10 +1,12 @@
-import { Card } from "react-bootstrap"
+import { Card, Carousel } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import SkinsCarousel from "./SkinsCarouselComponent"
 
 const OneChampComponent = ({ oneChamp }) => {
+    console.log('soyONECHAMPPPPP', oneChamp)
     return (
         <Card className="col-8">
-            <Card.Img className="GalleryCardImg img-fluid" src={oneChamp.image} />
+            <SkinsCarousel carouselChamp={oneChamp} />
             <Card.Body>
                 <Card.Title className="text-center"> <span className="text-danger">{oneChamp.name}</span> {oneChamp.title} </Card.Title>
                 <Card.Text className="text-center">
@@ -22,3 +24,4 @@ const OneChampComponent = ({ oneChamp }) => {
 }
 
 export default OneChampComponent
+

@@ -1,31 +1,42 @@
 import { useEffect, useState } from "react";
+import { Container, Row, Spinner } from "react-bootstrap";
 import RandomPickComponent from "../components/RandomPickComponent";
 import IndexAxios from "../services/indexAxios";
 
 const RandomPickPage = () => {
     const indexAxios = new IndexAxios()
-    const [random, setRandom] = useState([])
+    const [random, setRandom] = useState(null)
+    const refresh = () => {
+        setRandom({});
+    }
 
     useEffect(() => {
-        indexAxios.getRandomChampion()
+        indexAxios
+            .getRandomChampion()
             .then((randomImgs) => {
                 setRandom(randomImgs);
             })
             .catch((err) => console.log(err))
     }, [])
 
+
+
+    if (!random) {
+        return (
+            <Spinner animation='border' role='status'>
+                <span className='visually-hidden'>Loading...</span>
+            </Spinner>
+        );
+    }
+
     return (
-        <div>
-            {random.map((randomStuff) => {
-                return (
-                    <div className="col-4">
-                        < RandomPickComponent
-                            myChampion={randomStuff.image}
-                        />
-                    </div>
-                )
-            })}
-        </div>
+        <Container>
+            <Row className="d-flex justify-content-center">
+                < RandomPickComponent
+                    myChampion={random}
+                />
+            </Row>
+        </Container>
     )
 };
 

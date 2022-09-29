@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
+import { Carousel, Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import CarouselFade from "../components/SkinsCarouselComponent";
 import OneChampComponent from "../components/OneChampComponent"
 import IndexAxios from "../services/indexAxios"
 
@@ -10,10 +11,11 @@ const OneChampPage = () => {
     const [champion, setChampion] = useState(null)
 
     useEffect(() => {
-        indexAxios.getChampionDetails(name)
+        indexAxios
+            .getChampionDetails(name)
             .then((champ) => {
                 setChampion(champ);
-
+                console.log(champion)
             })
             .catch((err) => console.log(err))
     }, []);
@@ -27,11 +29,15 @@ const OneChampPage = () => {
     }
 
     return (
+
         <div className="d-flex justify-content-center mt-3">
             <OneChampComponent oneChamp={champion} />
         </div>
+
     )
+
 
 }
 
 export default OneChampPage
+

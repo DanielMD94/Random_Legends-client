@@ -2,6 +2,7 @@ import { Card, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const ChampionListComponent = ({ myChampion }) => {
+    console.log('soy MYCHAMPION', myChampion)
     return (
         <Link className="ChampionListLink" to={`/champion-details/${myChampion.name}`}>
             <div className="card">
@@ -14,7 +15,5 @@ const ChampionListComponent = ({ myChampion }) => {
 
     )
 }
-
-
 
 export default ChampionListComponent;
