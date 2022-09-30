@@ -11,7 +11,7 @@ const NavbarComponent = () => {
     return (
         <Navbar bg='dark' variant='dark'>
             <Container>
-                <Navbar.Brand as="span"><img className="NavbarLogo" src="https://res.cloudinary.com/dalk1vcw9/image/upload/v1663313193/LogoDorado_xilewd.png" />Random Legends</Navbar.Brand>
+                <Navbar.Brand as="span"><img className="NavbarLogo" src="https://res.cloudinary.com/dalk1vcw9/image/upload/v1663313193/LogoDorado_xilewd.png" /></Navbar.Brand>
                 <Nav className='me-auto'>
                     {!isLoading && !isLoggedIn ?
                         <>

@@ -1,3 +1,15 @@
-.randomPickPage {
+.randomChampName {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #c79b3b;
+    font-size: 30px;
+    margin: 10px 10px;
+}
+
+.randomCard {
     background-color: #000a12;
+}
+
+.randomButton {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #000a12;
 }

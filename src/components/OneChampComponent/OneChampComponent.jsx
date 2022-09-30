@@ -16,7 +16,7 @@ const OneChampComponent = ({ oneChamp }) => {
                 <Link
                     to={`/champions`}
                     className="OneChampButton d-flex justify-content-center">
-                    <button className="OneChampButtonText btn btn-warning px-4">Go Back</button>
+                    <button className="OneChampButtonText btn btn-warning px-4 mt-3">Go Back</button>
                 </Link>
             </Card.Body>
 

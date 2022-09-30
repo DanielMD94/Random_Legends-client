@@ -7,9 +7,13 @@
 
 .ChampionListLink {
     text-decoration: none;
-    color: #212529;
 }
 
 .ChampionListLink:hover {
     color: #c79b3b;
+}
+
+.LoadingSpinner {
+    display: flex;
+    justify-content: center;
 }

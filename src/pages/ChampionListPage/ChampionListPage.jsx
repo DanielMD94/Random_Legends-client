@@ -25,7 +25,7 @@ const ChampionListPage = () => {
             : <div className="ChampionListCard">
                 {champions.map((champion) => {
                     return (
-                        <div key={champion.id} className="col-4">
+                        <div key={champion.name} className="col-4">
                             < ChampionListComponent
                                 myChampion={champion}
                                 img={champion.img} />

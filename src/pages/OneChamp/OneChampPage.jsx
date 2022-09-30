@@ -30,7 +30,7 @@ const OneChampPage = () => {
 
     return (
 
-        <div className="d-flex justify-content-center mt-3">
+        <div className="oneChampPage d-flex justify-content-center mt-3">
             <OneChampComponent oneChamp={champion} />
         </div>
 
