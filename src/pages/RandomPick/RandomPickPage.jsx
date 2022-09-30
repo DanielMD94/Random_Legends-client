@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Spinner } from "react-bootstrap";
+import PostComponent from "../../components/PostComponent/PostComponent";
 import RandomPickComponent from "../../components/RandomPickComponent/RandomPickComponent";
 import IndexAxios from "../../services/indexAxios";
 import "./RandomPickPage.css"
@@ -27,13 +28,16 @@ const RandomPickPage = () => {
     }
 
     return (
-        <Container>
-            <Row className="d-flex justify-content-center">
-                < RandomPickComponent
-                    myChampion={{ random, setRefresh }}
-                />
-            </Row>
-        </Container>
+        <>
+            <Container>
+                <Row className="d-flex justify-content-center">
+                    < RandomPickComponent
+                        myChampion={{ random, setRefresh }}
+                    />
+                </Row>
+            </Container>
+            <PostComponent itemsAndChamp={random} />
+        </>
     )
 };
 

@@ -6,6 +6,8 @@ import RandomPickPage from '../pages/RandomPick/RandomPickPage';
 import RotationPage from '../pages/Rotation/RotationPage';
 import SignupPage from '../pages/Signup/SignupPage';
 import ChampionsPage from '../pages/ChampionListPage/ChampionListPage';
+import ForumPage from '../pages/ForumPage/ForumPage';
+
 
 const AppRoutes = () => {
     return (
@@ -16,6 +18,7 @@ const AppRoutes = () => {
             <Route path='/randomPick' element={<RandomPickPage />} />
             <Route path='/champions' element={<ChampionsPage />} />
             <Route path='/weekly-rotation' element={<RotationPage />} />
+            <Route path='/forum' element={<ForumPage />} />
             <Route path='/champion-details/:name' element={<OneChampPage />} />
         </Routes>
     )

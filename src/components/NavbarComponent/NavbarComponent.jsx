@@ -40,6 +40,9 @@ const NavbarComponent = () => {
                             <Nav.Link as='span'>
                                 <Link className='link-react' to="/weekly-rotation">Weekly Rotation</Link>
                             </Nav.Link>
+                            <Nav.Link as='span'>
+                                <Link className='link-react' to="/forum">Forum</Link>
+                            </Nav.Link>
                         </>
                     }
                 </Nav>
