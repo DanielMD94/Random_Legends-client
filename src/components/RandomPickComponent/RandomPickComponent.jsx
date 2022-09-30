@@ -12,18 +12,18 @@ const RandomPickComponent = ({ myChampion }) => {
 
     console.log('Card.Detalle', myChampion)
     return (
-        <div className="randomPickPage card col-8 mt-4">
+        <div className="randomCard card col-8">
             <h1 className="randomChampName text-center">{myChampion.random.randomChamp}</h1>
             <Card.Img className="RandomChampImg img-fluid" src={myChampion.random.image} />
-            <div className="d-flex justify-content-around">
+            <div className="d-flex justify-content-around mt-3">
                 <img className="RandomChampImg img-fluid" src={myChampion.random.items[0]} />
                 <img className="RandomChampImg img-fluid" src={myChampion.random.items[1]} />
                 <img className="RandomChampImg img-fluid" src={myChampion.random.items[2]} />
                 <img className="RandomChampImg img-fluid" src={myChampion.random.items[3]} />
                 <img className="RandomChampImg img-fluid" src={myChampion.random.items[4]} />
                 <img className="RandomChampImg img-fluid" src={myChampion.random.items[5]} />
-                <button onClick={refreshPage}>Click to reload!</button>
             </div>
+            <button className="randomButton btn btn-warning mt-4" onClick={refreshPage}>Click to reload!</button>
         </div>
     )
 }

@@ -6,7 +6,7 @@ const HomePage = () => {
     return (
         <div className="homePage">
             <div className="overlay" />
-            <video autoPlay muted loop plays-inline className="myVideo">
+            <video autoPlay muted loop className="myVideo">
                 <source src="https://res.cloudinary.com/dalk1vcw9/video/upload/v1663265270/Colors_Hero_Desktop_knjk89.mp4" type="video/mp4" />
             </video>
             <div className="content">
