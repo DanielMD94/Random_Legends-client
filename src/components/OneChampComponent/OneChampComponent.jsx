@@ -5,6 +5,7 @@ import './OneChampComponent.css'
 
 const OneChampComponent = ({ oneChamp }) => {
     console.log('soyONECHAMPPPPP', oneChamp)
+
     return (
         <Card className="col-8">
             <SkinsCarousel carouselChamp={oneChamp} />
@@ -19,7 +20,6 @@ const OneChampComponent = ({ oneChamp }) => {
                     <button className="OneChampButtonText btn btn-warning px-4 mt-3">Go Back</button>
                 </Link>
             </Card.Body>
-
         </Card>
     )
 }

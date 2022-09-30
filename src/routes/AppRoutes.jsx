@@ -6,6 +6,7 @@ import RandomPickPage from '../pages/RandomPick/RandomPickPage';
 import RotationPage from '../pages/Rotation/RotationPage';
 import SignupPage from '../pages/Signup/SignupPage';
 import ChampionsPage from '../pages/ChampionListPage/ChampionListPage';
+import ProfilePage from '../pages/Profile/ProfilePage';
 
 const AppRoutes = () => {
     return (
@@ -17,6 +18,7 @@ const AppRoutes = () => {
             <Route path='/champions' element={<ChampionsPage />} />
             <Route path='/weekly-rotation' element={<RotationPage />} />
             <Route path='/champion-details/:name' element={<OneChampPage />} />
+            <Route path='/profile/:idUsername' element={<ProfilePage />} />
         </Routes>
     )
 }
