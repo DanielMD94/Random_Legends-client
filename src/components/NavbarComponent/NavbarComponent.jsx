@@ -6,7 +6,6 @@ import { AuthContext } from "../../context/auth.context";
 const NavbarComponent = () => {
 
     const { user, isLoading, isLoggedIn, logOut } = useContext(AuthContext);
-    console.log(isLoggedIn)
 
     return (
         <Navbar bg='dark' variant='dark'>
@@ -29,7 +28,7 @@ const NavbarComponent = () => {
                         <>
                             <Nav.Link as='span' onClick={() => logOut()}>Log out</Nav.Link>
                             <Nav.Link as='span'>
-                                <Link className='link-react' to="/profile/:id">{user?.username}</Link>
+                                <Link className='link-react' to={`/profile/${user?._id}`}>{user?.username}</Link>
                             </Nav.Link>
                             <Nav.Link as='span'>
                                 <Link className='link-react' to="/randomPick">Random Pick</Link>

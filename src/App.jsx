@@ -8,7 +8,7 @@ import AppRoutes from './routes/AppRoutes';
 const App = () => {
 
   const { user } = useContext(AuthContext)
-  console.log(user)
+  // console.log(user)
 
   return (
     <div className="App">
