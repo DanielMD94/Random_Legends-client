@@ -17,14 +17,14 @@ const PostComponent = ({ itemsAndChamp }) => {
     const createNewPost = (eventHTML) => {
         eventHTML.preventDefault();
         forumAxios.createPost(newPost).then((response) => {
-            console.log(response);
-            // navigate('/forum')
-        });
+            navigate('/forum')
+        })
+            .catch((err) => console.log(err))
     };
 
     const updateNewPost = (eventHTML) => {
         const { name, value } = eventHTML.target;
-        setNewPost({ ...newPost, [name]: value, user: user._id });
+        setNewPost({ ...newPost, [name]: value, user: user._id, imgItems: items, imgChamp: image });
     };
 
 
@@ -42,15 +42,6 @@ const PostComponent = ({ itemsAndChamp }) => {
                     <textarea className="form-control w-25" name="description" onChange={updateNewPost} rows="3"></textarea>
                 </div>
                 <div>
-                    {
-                        items.map((item, i) => {
-                            return <input key={i} type="hidden" className="form-control" name="imgItems" onChange={updateNewPost} value={item} />
-                        })
-                    }
-
-
-                    <input type="hidden" className="form-control" name="imgChamp" onChange={updateNewPost} value=
-                        {image} />
                     <button type="submit" className="btn btn-warning mt-3">Submit</button>
                 </div>
             </form>

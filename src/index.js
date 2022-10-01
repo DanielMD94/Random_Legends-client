@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -15,7 +15,7 @@ root.render(
       <App />
     </AuthProvider>
   </Router>
-  /* </React.StrictMode> */
+  // {/* </React.StrictMode> */}
 
 );
 

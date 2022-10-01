@@ -7,6 +7,8 @@ const NavbarComponent = () => {
 
     const { user, isLoading, isLoggedIn, logOut } = useContext(AuthContext);
 
+
+
     return (
         <Navbar bg='dark' variant='dark'>
             <Container>

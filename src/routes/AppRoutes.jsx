@@ -7,8 +7,10 @@ import RotationPage from '../pages/Rotation/RotationPage';
 import SignupPage from '../pages/Signup/SignupPage';
 import ChampionsPage from '../pages/ChampionListPage/ChampionListPage';
 import ForumPage from '../pages/ForumPage/ForumPage';
-
+import ForumDetailsPage from '../pages/ForumDetailsPage/ForumDetailsPage'
 import ProfilePage from '../pages/Profile/ProfilePage';
+
+
 
 const AppRoutes = () => {
     return (
@@ -22,6 +24,7 @@ const AppRoutes = () => {
             <Route path='/forum' element={<ForumPage />} />
             <Route path='/champion-details/:name' element={<OneChampPage />} />
             <Route path='/profile/:idUsername' element={<ProfilePage />} />
+            <Route path='/forum/:idPost' element={<ForumDetailsPage />} />
         </Routes>
     )
 }

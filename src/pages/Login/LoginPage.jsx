@@ -52,7 +52,7 @@ const LoginPage = () => {
 
                         <div className="checkbox">
                             <input type="checkbox" id="keep" />
-                            <label for="keep">Remember me</label>
+                            <label htmlFor="keep">Remember me</label>
                         </div>
 
                         <div className="button">
