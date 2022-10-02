@@ -9,6 +9,7 @@ import ChampionsPage from '../pages/ChampionListPage/ChampionListPage';
 import ForumPage from '../pages/ForumPage/ForumPage';
 import ForumDetailsPage from '../pages/ForumDetailsPage/ForumDetailsPage'
 import ProfilePage from '../pages/Profile/ProfilePage';
+import AdminPage from '../pages/AdminPage/AdminPage';
 
 
 
@@ -25,6 +26,7 @@ const AppRoutes = () => {
             <Route path='/champion-details/:name' element={<OneChampPage />} />
             <Route path='/profile/:idUsername' element={<ProfilePage />} />
             <Route path='/forum/:idPost' element={<ForumDetailsPage />} />
+            <Route path='/admin' element={<AdminPage />} />
         </Routes>
     )
 }

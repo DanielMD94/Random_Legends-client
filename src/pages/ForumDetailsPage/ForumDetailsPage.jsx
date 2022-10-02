@@ -56,13 +56,11 @@ const ForumDetailsPage = () => {
                                             <li> {comment.comment} </li>
                                         </div>
                                     )
-
                                 })
                             }
                         </ul>
                         <FormCommentComponent reload={{ setRefresh, specifictPost }} />
                     </>
-
             }
         </>
     )
