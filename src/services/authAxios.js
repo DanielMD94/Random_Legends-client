@@ -1,6 +1,7 @@
 import InitAxios from "./initAxios";
 
 class AuthAxios extends InitAxios {
+
     constructor() {
         super('/auth')
     }

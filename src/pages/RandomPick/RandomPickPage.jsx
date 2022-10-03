@@ -1,9 +1,11 @@
+import "./RandomPickPage.css"
+import { Box } from "@mui/material";
+import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import { useEffect, useState } from "react";
 import { Container, Row, Spinner } from "react-bootstrap";
 import PostComponent from "../../components/PostComponent/PostComponent";
 import RandomPickComponent from "../../components/RandomPickComponent/RandomPickComponent";
 import IndexAxios from "../../services/indexAxios";
-import "./RandomPickPage.css"
 
 const RandomPickPage = () => {
     const indexAxios = new IndexAxios()
@@ -29,14 +31,18 @@ const RandomPickPage = () => {
 
     return (
         <>
-            <Container>
-                <Row className="d-flex justify-content-center">
-                    < RandomPickComponent
-                        myChampion={{ random, setRefresh }}
-                    />
-                </Row>
-            </Container>
-            <PostComponent itemsAndChamp={random} />
+            <Box className="randomBox">
+                <Grid2 className='randomPickBox' container spacing={0}>
+                    <Grid2 xs={12} sm={12} md={8}>
+                        < RandomPickComponent
+                            myChampion={{ random, setRefresh }}
+                        />
+                    </Grid2>
+                    <Grid2 id="randomPickPosts" sm={12} md={4}>
+                        <PostComponent itemsAndChamp={random} />
+                    </Grid2>
+                </Grid2 >
+            </Box>
         </>
     )
 };

@@ -1,3 +1,4 @@
+import "./RotationPage.css"
 import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap"
 import RotationComponent from "../../components/RotationComponent/RotationComponent"
@@ -21,13 +22,12 @@ const RotationPage = () => {
             ? <Spinner className="LoadingSpinner d-flex" animation='border' role='status'>
                 <span className='visually-hidden justify-content-center'>Loading...</span>
             </Spinner>
-            : <div className="ChampionListCard">
+            : <div className="championRotationCard">
                 {weekChampions.map((champion) => {
                     return (
-                        <div key={champion.name} className="col-3">
+                        <div key={champion.name} className="col-sm-12 col-md-3">
                             < RotationComponent
-                                myChampion={champion}
-                                img={champion.img} />
+                                myChampion={champion} />
                         </div>
                     )
                 })}

@@ -1,18 +1,22 @@
 import { Card, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import './ChampionListComponent.css'
+import Tilt from 'react-parallax-tilt';
 
 const ChampionListComponent = ({ myChampion }) => {
-    console.log('soy MYCHAMPION', myChampion)
+
+    const { img, name } = myChampion
+
     return (
-        <Link className="ChampionListName" to={`/champion-details/${myChampion.name}`}>
-            <div className="card championsListCard">
-                <Card.Img className="GalleryCardImg img-fluid" src={myChampion.img} />
-                <Card.Body>
-                    <Card.Title className="ChampionName text-center"> {myChampion.name} </Card.Title>
-                </Card.Body>
-            </div>
-        </Link>
+        <Tilt glareEnable={true} glareMaxOpacity={0.3} glareColor="#FFFFFF" glarePosition="bottom" glareBorderRadius="10px">
+            <Link className="championListLink" to={`/champion-details/${name}`}>
+                <div style={{ backgroundImage: `url(${img})` }} className="card championsListBg">
+                    <Card.Body>
+                        <Card.Title className="championListName"> {name} </Card.Title>
+                    </Card.Body>
+                </div>
+            </Link>
+        </Tilt>
     )
 }
 

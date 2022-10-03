@@ -1,18 +1,28 @@
-.ChampionListName {
+.championListName {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3em;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-decoration: none;
     color: white;
+    margin-top: 25%;
 }
 
-.ChampionListName:hover {
+.championListName:hover {
     color: #c79b3b;
 }
 
-.ChampionName {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: x-large;
+.championsListBg {
+    background-color: #000a12;
+    background-position: center;
+    background-size: cover;
+    height: 40vh;
 }
 
-.championsListCard {
-    background-color: #000a12;
+.championListLink {
+    text-decoration: none;
+    text-align: center;
+}
+
+.championListLink:hover {
+    text-shadow: 3px 3px #000a12;
 }

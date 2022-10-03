@@ -30,7 +30,7 @@ const ProfilePage = () => {
     }
 
     return (
-        <div>
+        <div className="profilePage">
             <ProfileComponent loggedUser={user} />
         </div>
     )

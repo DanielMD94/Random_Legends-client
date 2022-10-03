@@ -1,28 +1,42 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
-
-#globe {
-    margin-top: -3px;
-    margin-left: 5px;
-    float: right;
-}
-
-.signupBox {
+.loginBox {
     background-color: white;
     margin: 3vh 15vh;
     height: 84vh;
 }
 
-#signupPicture {
-    background: url("https://res.cloudinary.com/dalk1vcw9/image/upload/v1664710065/group-arcade-01-splash_tipzmu.jpg") no-repeat center center;
+#loginPicture {
+    background: url("https://res.cloudinary.com/dalk1vcw9/image/upload/v1664709682/champion-galio-aprilfools-splash_oj6zbz.jpg") no-repeat center center;
     background-size: cover;
+    /* background: url("https://res.cloudinary.com/dalk1vcw9/image/upload/v1663283317/BardImg_ccxozm.jpg") no-repeat center center; */
 }
 
-/* .mySignupVideo {
+/* .myLoginVideo {
     position: absolute;
     width: fit-content;
     height: 84vh;
     object-fit: contain;
 } */
+
+.loginLinkToSignup {
+    text-decoration: none;
+    color: #262626;
+    font-size: small;
+}
+
+.errorBoxAlign {
+    display: flex;
+    justify-content: center;
+}
+
+.errorBox {
+    width: 30vh;
+    text-align: center;
+    background-color: red;
+    color: white;
+    margin-left: 10%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
 
 .region {
     display: flex;
@@ -31,39 +45,39 @@
     margin-left: 40%;
 }
 
-.signupHeader {
+.loginHeader {
     padding-top: 4vh;
     padding-left: 5vh;
     display: flex;
     flex-direction: row;
 }
 
-.signup-body {
+.login-body {
     padding: 0px 20px;
     width: 90%;
     margin: 0 auto;
 }
 
-.signup-body p {
+.login-body p {
     font-size: 30px;
     font-weight: 600;
     margin-top: 8vh;
     margin-left: 10%;
 }
 
-.signup-body a {
+.login-body a {
     display: block;
     margin: 2vh;
     cursor: pointer;
     margin-left: 10%;
 }
 
-.signup-body form {
+.login-body form {
     margin-top: 30px;
     margin-left: 10%;
 }
 
-.signup-body form>input {
+.login-body form>input {
     display: block;
     width: 100%;
     margin: 0 auto;
@@ -78,18 +92,17 @@
     transition: all 0.5s;
 }
 
-.signup-body form>input:focus {
+.login-body form>input:focus {
     border: 2px solid #111111;
     background: #111111;
     color: white;
 }
 
-.signupArrowButton {
+.arrowButton {
     display: flex;
     justify-content: center;
-    margin-top: 2vh;
 }
 
-.signupArrowButton Button {
+.arrowButton Button {
     background-color: #262626;
 }

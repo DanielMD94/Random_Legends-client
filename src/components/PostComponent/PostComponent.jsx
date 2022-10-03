@@ -34,12 +34,12 @@ const PostComponent = ({ itemsAndChamp }) => {
             <form onSubmit={createNewPost}>
                 <div>
                     <label htmlFor="" className="form-label text-light">Title:</label>
-                    <input type="text" name="title" onChange={updateNewPost} className="form-control w-25" />
+                    <input type="text" name="title" onChange={updateNewPost} className="form-control" />
                 </div>
                 <div className="mt-3">
                     <label htmlFor="exampleFormControlTextarea1" className="form-label text-light">Comment your Random
                         Pick!!</label>
-                    <textarea className="form-control w-25" name="description" onChange={updateNewPost} rows="3"></textarea>
+                    <textarea className="form-control" name="description" onChange={updateNewPost} rows="3"></textarea>
                 </div>
                 <div>
                     {
@@ -47,7 +47,6 @@ const PostComponent = ({ itemsAndChamp }) => {
                             return <input key={i} type="hidden" className="form-control" name="imgItems" onChange={updateNewPost} value={item} />
                         })
                     }
-
 
                     <input type="hidden" className="form-control" name="imgChamp" onChange={updateNewPost} value=
                         {image} />

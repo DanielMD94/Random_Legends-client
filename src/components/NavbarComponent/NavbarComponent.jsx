@@ -1,11 +1,19 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { useState } from "react";
 import { Link } from 'react-router-dom';
 import './NavbarComponent.css'
 import { useContext } from 'react';
 import { AuthContext } from "../../context/auth.context";
+import { Dialog, DialogTitle, DialogContent, DialogActions, DialogContentText, Button } from "@mui/material";
 const NavbarComponent = () => {
 
     const { user, isLoading, isLoggedIn, logOut } = useContext(AuthContext);
+    const [open, setOpen] = useState(false);
+
+    const handleLogOut = () => {
+        setOpen(false);
+        logOut();
+    }
 
     return (
         <Navbar bg='dark' variant='dark'>
@@ -26,7 +34,7 @@ const NavbarComponent = () => {
                         </>
                         :
                         <>
-                            <Nav.Link as='span' onClick={() => logOut()}>Log out</Nav.Link>
+                            <Nav.Link as='span' style={{ cursor: 'pointer' }} onClick={() => { setOpen(true) }}>Log out</Nav.Link>
                             <Nav.Link as='span'>
                                 <Link className='link-react' to={`/profile/${user?._id}`}>{user?.username}</Link>
                             </Nav.Link>
@@ -46,6 +54,26 @@ const NavbarComponent = () => {
                     }
                 </Nav>
             </Container>
+            <Dialog
+                open={open}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">
+                    {"Do you want to logout?"}
+                </DialogTitle>
+                <DialogContent>
+                    <DialogContentText id="alert-dialog-description">
+                        If you logout you will be kicked out to the homepage
+                    </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={() => { setOpen(false) }}>Dismiss</Button>
+                    <Button onClick={handleLogOut} autoFocus>
+                        Logout
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </Navbar>
     );
 };

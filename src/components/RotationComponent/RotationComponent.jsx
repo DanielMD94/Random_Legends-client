@@ -1,17 +1,24 @@
+import "./RotationComponent.css"
 import { Card, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import "./RotationComponent.css"
+import Tilt from 'react-parallax-tilt';
+
 
 const RotationComponent = ({ myChampion }) => {
+
+    const { img, name } = myChampion
+
     return (
-        <Link className="ChampionListName" to={`/champion-details/${myChampion.name}`}>
-            <div className="card championsWeekCard">
-                <Card.Img className="GalleryCardImg img-fluid" src={myChampion.img} />
-                <Card.Body>
-                    <Card.Title className="ChampName text-center"> {myChampion.name} </Card.Title>
-                </Card.Body>
-            </div>
-        </Link>
+
+        <Tilt glareEnable={true} glareMaxOpacity={0.3} glareColor="#FFFFFF" glarePosition="bottom" glareBorderRadius="10px">
+            <Link className="championRotationLink" to={`/champion-details/${name}`}>
+                <div style={{ backgroundImage: `url(${img})` }} className="card championsRotationBg">
+                    <Card.Body>
+                        <Card.Title className="championRotationName"> {name} </Card.Title>
+                    </Card.Body>
+                </div>
+            </Link>
+        </Tilt>
 
     )
 }

@@ -1,13 +1,28 @@
-.ChampionListName {
+.championRotationName {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-decoration: none;
     color: white;
+    margin-top: 25%;
 }
 
-.ChampName {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.championRotationName:hover {
+    color: #c79b3b;
 }
 
-.championsWeekCard {
+.championsRotationBg {
     background-color: #000a12;
-    ;
+    background-position: center;
+    background-size: cover;
+    height: 40vh;
+}
+
+.championRotationLink {
+    text-decoration: none;
+    text-align: center;
+}
+
+.championRotationLink:hover {
+    text-shadow: 3px 3px #000a12;
 }

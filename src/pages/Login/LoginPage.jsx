@@ -1,25 +1,39 @@
+import './LoginPage.css';
 import logoNegro from '../../assets/LogoNegro.png'
 import { useState, useContext } from 'react';
 import { AuthContext } from '../../context/auth.context';
 import AuthAxios from "../../services/authAxios";
-import { useNavigate } from "react-router-dom";
-
-
+import { Link, useNavigate } from "react-router-dom";
+import { Box, Stack, Button } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 
 const LoginPage = () => {
 
+    const { user: me, isLoading, isLoggedIn, logOut } = useContext(AuthContext);
+
     const navigate = useNavigate();
     const [user, setUser] = useState({});
+    const [error, setError] = useState(null)
+    const [showPass, setShowPass] = useState(false)
     const { storeToken, authentication } = useContext(AuthContext);
     const authAxios = new AuthAxios()
 
     const login = (eventHTML) => {
         eventHTML.preventDefault();
-        authAxios.login(user).then((response) => {
-            storeToken(response.token)
-            authentication()
-
-        })
+        authAxios
+            .login(user)
+            .then((response) => {
+                if (response.errorMessage) {
+                    setError(response.errorMessage)
+                    return
+                }
+                else {
+                    storeToken(response.token)
+                    authentication()
+                    navigate(`/randomPick`) // EL USER ME LLEGA UNDEFINED (???)
+                }
+            })
     };
 
     const updateUser = (eventHTML) => {
@@ -27,53 +41,52 @@ const LoginPage = () => {
         setUser({ ...user, [name]: value });
     };
 
-
-
     return (
+        <>
+            <Box
+                className='loginBox'
+            >
+                <Grid2 className='loginBox' container spacing={0}>
+                    <Grid2 xs={12} sm={6} md={3}>
+                        <Stack spacing={3}>
+                            <div className='loginHeader'>
+                                <a href="/"><img src={logoNegro} width="40" alt="Logo Random Legends" /></a>
+                                <div className="region">
+                                    <p>EUW</p>
+                                    <i id="globe"><img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Globe_icon_2.svg/800px-Globe_icon_2.svg.png"
+                                        alt='globe' width="20" /></i>
+                                </div>
+                            </div>
+                            <div className="login-body">
+                                <p>LOGIN</p>
+                                <Link className="loginLinkToSignup" to='/signup'>Dont have an Account yet? Sign Up</Link>
+                                <form onSubmit={login}>
+                                    <input type="text" name="username" onChange={updateUser} placeholder="Username" required="required" />
 
-        <div className="container">
-            <div className="login-container">
-                <div className="login-top">
-                    <a href="/"><img src={logoNegro} width="40" alt="Logo League of Legends" /></a>
-                    <div className="language">
-                        <p>EUW</p>
-                        <i id="globe"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Globe_icon_2.svg/800px-Globe_icon_2.svg.png"
-                            alt='globe' width="20" /></i>
-                    </div>
-                </div>
-                <div className="login-body">
-                    <p>LOGIN</p>
+                                    <input type={showPass ? "text" : "password"} name="password" onChange={updateUser} placeholder="Password" required="required" />
 
-                    <form onSubmit={login}>
-                        <input type="text" name="username" onChange={updateUser} placeholder="Username" required="required" />
+                                    <a className="btn btn-secondary" onClick={() => { setShowPass(!showPass) }}>{showPass ? "Hide password" : "Show password"}</a>
+                                    <div className="arrowButton">
+                                        <Button variant="outlined" type="submit"><ArrowForwardIcon /></Button>
+                                    </div>
+                                </form>
+                                <div className='errorBoxAlign'>
+                                    {error && <h5 className='errorBox'>Username or Password Incorrect</h5>}
+                                </div>
 
-                        <input type="password" name="password" onChange={updateUser} placeholder="Password" required="required" />
+                            </div>
+                        </Stack>
+                    </Grid2>
+                    <Grid2 id="loginPicture" sm={6} md={9}>
+                        {/* <video autoPlay muted loop className="myLoginVideo">
+                            <source src="https://res.cloudinary.com/dalk1vcw9/video/upload/v1664656377/aprilfools-2018-webm_v7xxos.webm" type="video/mp4" />
+                        </video> */}
+                    </Grid2>
+                </Grid2>
 
-                        <div className="checkbox">
-                            <input type="checkbox" id="keep" />
-                            <label for="keep">Remember me</label>
-                        </div>
-
-                        <div className="button">
-                            <button type="submit">&#x279C;</button>
-                        </div>
-                        {/* {{ #if messageError }}
-                                <p>{{ messageError }}</p>
-                                {{/if }} */}
-                    </form>
-                </div>
-                <div className="login-bottom p-2 text-center">
-                    <a href="/auth/signUp" className="text-center p-1">Can´t Login? <br /> Create Account</a>
-                    <a href="#" target="_blank">Daniel Moreta & Daniel Gonzalez</a>
-                </div>
-            </div>
-
-            <div className="background-container">
-                <div className="background-alert"></div>
-            </div>
-        </div>
-
+            </Box>
+        </>
     )
 }
 

@@ -1,0 +1,18 @@
+.champDetailsCard {
+    max-width: 60vw;
+    margin-bottom: 4vh;
+}
+
+.championStatsRadar {
+    height: 55vh;
+}
+
+.oneChampName {
+    text-align: center;
+
+}
+
+.oneChampName span {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large
+}

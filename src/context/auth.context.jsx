@@ -3,6 +3,7 @@ import { createContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthAxios from "../services/authAxios";
 
+
 export const AuthContext = createContext();
 
 const LOCALSTORAGE_TOKEN = 'tokenAuth';
@@ -33,18 +34,20 @@ export const AuthProvider = (props) => {
           setUser(user);
           setIsLoading(false);
           setIsLoggedIn(true);
-          navigate('/');
+          // navigate('/');
         })
         .catch((err) => {
           console.log(err);
           setUser(null);
           setIsLoading(false);
           setIsLoggedIn(false);
+          navigate('/');
         });
     } else {
       setUser(null);
       setIsLoading(false);
       setIsLoggedIn(false);
+      navigate('/');
     }
   };
 

@@ -7,7 +7,6 @@ import RotationPage from '../pages/Rotation/RotationPage';
 import SignupPage from '../pages/Signup/SignupPage';
 import ChampionsPage from '../pages/ChampionListPage/ChampionListPage';
 import ForumPage from '../pages/ForumPage/ForumPage';
-
 import ProfilePage from '../pages/Profile/ProfilePage';
 
 const AppRoutes = () => {

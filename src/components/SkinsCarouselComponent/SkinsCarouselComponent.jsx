@@ -1,20 +1,30 @@
-import Carousel from 'react-bootstrap/Carousel';
-import './SkinsCarouselComponent.css'
+// import Carousel from 'react-bootstrap/Carousel';
+// import './SkinsCarouselComponent.css'
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, EffectCards } from "swiper";
+import "swiper/css";
+import "swiper/css/effect-cards";
+import "swiper/css/pagination";
 
-function SkinsCarousel({ carouselChamp }) {
-    console.log('soy carousel', carouselChamp)
+const SkinsCarousel = ({ carouselChamp }) => {
     return (
-        <Carousel fade>
+        <Swiper
+            effect={"cards"}
+            grabCursor={true}
+            loop={true}
+            modules={[Pagination, EffectCards]}
+            pagination={true}
+        >
             {
                 carouselChamp.skins.map(skin => {
                     return (
-                        <Carousel.Item key={skin}>
+                        <SwiperSlide key={skin}>
                             <img className="d-block w-100" src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${carouselChamp.id}_${skin}.jpg`} />
-                        </Carousel.Item>
+                        </SwiperSlide>
                     )
                 })
             }
-        </Carousel>
+        </Swiper>
     )
 }
 
