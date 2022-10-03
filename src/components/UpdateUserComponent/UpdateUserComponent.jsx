@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ProfileAxios from "../../services/profileAxios";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { AuthContext } from "../../context/auth.context";
 
 const UpdateUserComponent = ({ user, refreshAndUser }) => {
 
+    const { user: pg23, isLoading, isLoggedIn, logOut } = useContext(AuthContext);
     const { setRefreshUser, allUsers } = refreshAndUser
     const { username, role, summonerName, _id } = user
 
@@ -49,7 +51,7 @@ const UpdateUserComponent = ({ user, refreshAndUser }) => {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p className="text-dark text-center h2 mt-4">Editing as Admin: <span className="text-warning">clavo </span></p>
+                    <p className="text-dark text-center h2 mt-4">Editing as Admin: <span className="text-warning">{pg23.username} </span></p>
                     <div className="d-flex align-items-center flex-column">
                         <form onSubmit={update}>
                             <div className="mb-3">
