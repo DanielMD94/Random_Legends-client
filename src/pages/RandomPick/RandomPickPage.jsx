@@ -19,6 +19,7 @@ const RandomPickPage = () => {
                 setRandom(randomImgs);
             })
             .catch((err) => console.log(err))
+
     }, [refresh])
 
     if (!random) {

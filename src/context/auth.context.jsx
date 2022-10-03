@@ -54,6 +54,7 @@ export const AuthProvider = (props) => {
   const logOut = () => {
     destroyToken();
     authentication();
+    navigate('/')
   }
 
   useEffect(() => {

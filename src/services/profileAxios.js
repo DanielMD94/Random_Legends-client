@@ -5,9 +5,20 @@ class ProfileAxios extends InitAxios {
         super('/profile')
     }
 
-    getUserProfile(id) {
+    getAllUsers() {
+        return this.axios.get(`/users`).then((response) => response.data)
+    }
 
+    getUserProfile(id) {
         return this.axios.get(`/${id}`).then((response) => response.data)
+    }
+
+    updateUser(id, body) {
+        return this.axios.put(`/${id}/adminUpdate`, body).then((response) => response.data)
+    }
+
+    deleteUser(id) {
+        return this.axios.delete(`/${id}/delete`).then((response) => response.data)
     }
 }
 

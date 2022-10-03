@@ -19,7 +19,7 @@ const ChampionListPage = () => {
             })
             .catch(err => console.log(err))
     }, [])
-
+    console.log(champions)
     return (
 
         !champions

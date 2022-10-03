@@ -17,14 +17,14 @@ const PostComponent = ({ itemsAndChamp }) => {
     const createNewPost = (eventHTML) => {
         eventHTML.preventDefault();
         forumAxios.createPost(newPost).then((response) => {
-            console.log(response);
-            // navigate('/forum')
-        });
+            navigate('/forum')
+        })
+            .catch((err) => console.log(err))
     };
 
     const updateNewPost = (eventHTML) => {
         const { name, value } = eventHTML.target;
-        setNewPost({ ...newPost, [name]: value, user: user._id });
+        setNewPost({ ...newPost, [name]: value, user: user._id, imgItems: items, imgChamp: image });
     };
 
 

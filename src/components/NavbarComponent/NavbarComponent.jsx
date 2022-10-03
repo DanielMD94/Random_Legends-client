@@ -15,6 +15,8 @@ const NavbarComponent = () => {
         logOut();
     }
 
+
+
     return (
         <Navbar bg='dark' variant='dark'>
             <Container>
@@ -50,6 +52,13 @@ const NavbarComponent = () => {
                             <Nav.Link as='span'>
                                 <Link className='link-react' to="/forum">Forum</Link>
                             </Nav.Link>
+                            {
+                                user?.role === 'CHALLENGER' &&
+
+                                <Nav.Link as='span'>
+                                    <Link className='link-react' to="/admin">Admin</Link>
+                                </Nav.Link>
+                            }
                         </>
                     }
                 </Nav>

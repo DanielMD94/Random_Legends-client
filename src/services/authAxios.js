@@ -15,12 +15,14 @@ class AuthAxios extends InitAxios {
     }
 
     me(token) {
-        console.log('Edtoy aquiiiiiiiiiiiiiii')
-        return this.axios.get('/me', {
-            headers: {
-                'authorization': `Bearer ${token}`
-            }
-        }).then((response) => response.data);
+
+        return this.axios.get('/me')
+            // , {
+            //     headers: {
+            //         'authorization': `Bearer ${token}`
+            //     }
+            // })
+            .then((response) => response.data);
     }
 
 }
