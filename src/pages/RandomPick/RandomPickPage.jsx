@@ -24,27 +24,31 @@ const RandomPickPage = () => {
 
     if (!random) {
         return (
-            <Spinner animation='border' role='status'>
-                <span className='visually-hidden'>Loading...</span>
-            </Spinner>
+            <div className="poroSpinner d-flex justify-content-center">
+                <Spinner role='status'>
+                    <video autoPlay muted loop plays-inline>
+                        <source src="https://res.cloudinary.com/dalk1vcw9/video/upload/v1663272676/Poro_base_AN_idle3_o5p599.mp4" />
+                    </video>
+                </Spinner>
+            </div>
         );
     }
 
     return (
-        <>
-            <Box className="randomBox">
-                <Grid2 className='randomPickBox' container spacing={0}>
-                    <Grid2 xs={12} sm={12} md={8}>
-                        <RandomPickComponent
-                            myChampion={{ random, setRefresh }}
-                        />
-                    </Grid2>
-                    <Grid2 id="randomPickPosts" sm={12} md={4}>
-                        <PostComponent itemsAndChamp={random} />
-                    </Grid2>
-                </Grid2 >
-            </Box>
-        </>
+
+        <Box className="randomBox">
+            <Grid2 className='randomPickBox' container spacing={0}>
+                <Grid2 xs={12} sm={12} md={8}>
+                    < RandomPickComponent
+                        myChampion={{ random, setRefresh }}
+                    />
+                </Grid2>
+                <Grid2 id="randomPickPosts" xs={12} sm={12} md={4}>
+                    <PostComponent itemsAndChamp={random} />
+                </Grid2>
+            </Grid2 >
+        </Box>
+
     )
 };
 

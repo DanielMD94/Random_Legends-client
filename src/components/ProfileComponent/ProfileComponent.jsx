@@ -30,7 +30,6 @@ const ProfileComponent = ({ loggedUser }) => {
 
                     <Card.Body>
                         <Card.Title className="text-warning">{username}: {role}</Card.Title>
-                        <p>In game information:</p>
                         <img className="cardBanner" src="https://res.cloudinary.com/dalk1vcw9/image/upload/v1664735575/lolDecoration_axoqyx.png" width="450" alt="Banner" />
                         <p>Summoner Name: {summonerName}</p>
                         <p>Elo: {tier} {rank} {leaguePoints} points</p>

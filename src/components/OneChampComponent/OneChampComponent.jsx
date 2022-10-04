@@ -2,16 +2,20 @@ import './OneChampComponent.css'
 import { Link } from "react-router-dom"
 import SkinsCarousel from "../SkinsCarouselComponent/SkinsCarouselComponent"
 import { Card, Button, CardActionArea, CardActions, CardMedia, CardContent, Typography } from '@mui/material';
-import { ResponsiveRadar } from '@nivo/radar'
-import theme from './radarTheme.json'
+import StatsGraphicComponent from '../StatsGraphicComponent/StatsGraphicComponent';
+import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
+
 
 const OneChampComponent = ({ oneChamp }) => {
     const { stats } = oneChamp
 
-    let data = [
+    let smallStats = [
         { label: 'ATTACK', '': stats.attackdamage },
         { label: 'ARMOR', '': stats.armor },
         { label: 'MAGIC RESISTANCE', '': stats.spellblock },
+    ]
+
+    let bigStats = [
         { label: 'LIFE', '': stats.hp },
         { label: 'MANA', '': stats.mp },
         { label: 'MOVE SPEED', '': stats.movespeed }
@@ -35,29 +39,28 @@ const OneChampComponent = ({ oneChamp }) => {
                         <div className='d-flex justify-content-center'>
                             <div className='gameplayTips col-sm-12 col-md-10 mt-4'>
                                 <Typography variant="body3" color="text.dark">
-                                    <p className='h4 text-danger text-center'>Ally Tips</p>
-                                    {oneChamp.allytips}
+                                    {oneChamp.allytips.length > 0 &&
+                                        <>
+                                            <p className='h4 text-danger text-center'>Ally Tips</p>
+                                            <p>{oneChamp.allytips}</p>
+                                        </>
+
+                                    }
                                 </Typography>
                                 <Typography variant=" body3" color="text.dark">
-                                    <p className='h4 text-danger text-center mt-4'>Enemy Tips</p>
-                                    {oneChamp.enemytips}
+                                    {oneChamp.enemytips.length > 0 &&
+                                        <>
+                                            <p className='h4 text-danger text-center mt-4'>Enemy Tips</p>
+                                            <p>{oneChamp.enemytips}</p>
+                                        </>
+
+                                    }
                                 </Typography>
                             </div>
                         </div>
-                        <div className="championStatsRadar">
-                            <ResponsiveRadar
-                                data={data}
-                                keys={['']}
-                                indexBy="label"
-                                margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
-                                gridLabelOffset={36}
-                                enableDotLabel={true}
-                                theme={theme}
-                                dotSize={10}
-                                dotBorderWidth={8}
-                                motionConfig="wobbly"
-                            />
-                        </div>
+                        <StatsGraphicComponent data={smallStats} />
+
+                        <StatsGraphicComponent data={bigStats} />
                     </CardContent>
                 </CardActionArea>
                 <CardActions className="d-flex justify-content-center">
