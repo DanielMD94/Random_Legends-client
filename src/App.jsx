@@ -1,13 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useContext } from 'react';
 import './App.css';
 import NavbarComponent from './components/NavbarComponent/NavbarComponent';
-import { AuthContext } from './context/auth.context';
 import AppRoutes from './routes/AppRoutes';
 
 const App = () => {
 
-  const { user } = useContext(AuthContext)
 
   return (
     <div className="App">

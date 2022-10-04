@@ -21,6 +21,7 @@ const RandomPickComponent = ({ myChampion }) => {
                 </Link>
             </Tilt>
             <div className="d-flex justify-content-around mt-3">
+                {/* USAR UN MAP */}
                 <img className="RandomItemImg" src={random.items[0]} />
                 <img className="RandomItemImg" src={random.items[1]} />
                 <img className="RandomItemImg" src={random.items[2]} />

@@ -35,7 +35,7 @@ const RandomPickPage = () => {
             <Box className="randomBox">
                 <Grid2 className='randomPickBox' container spacing={0}>
                     <Grid2 xs={12} sm={12} md={8}>
-                        < RandomPickComponent
+                        <RandomPickComponent
                             myChampion={{ random, setRefresh }}
                         />
                     </Grid2>

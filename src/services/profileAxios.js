@@ -14,7 +14,7 @@ class ProfileAxios extends InitAxios {
     }
 
     updateUser(id, body) {
-        return this.axios.put(`/${id}/adminUpdate`, body).then((response) => response.data)
+        return this.axios.put(`/${id}/update`, body).then((response) => response.data)
     }
 
     deleteUser(id) {

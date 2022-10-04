@@ -21,5 +21,9 @@ class IndexAxios extends InitAxios {
         return this.axios.get(`/weeklyRotation`).then((response) => response.data)
     }
 
+    getAllChamps() {
+        return this.axios.get(`/checkBox`).then((response) => response.data)
+    }
+
 }
 export default IndexAxios;

@@ -16,7 +16,7 @@ const PostComponent = ({ itemsAndChamp }) => {
 
     const createNewPost = (eventHTML) => {
         eventHTML.preventDefault();
-        forumAxios.createPost(newPost).then((response) => {
+        forumAxios.createPost(newPost).then(() => {
             navigate('/forum')
         })
             .catch((err) => console.log(err))
