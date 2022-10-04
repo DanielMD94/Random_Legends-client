@@ -15,7 +15,7 @@ const OnePostComponent = ({ postInfo }) => {
 
     return (
 
-        <div className="row row-cols-1 row-cols-md-2 g-4 d-flex justify-content-center mt-4">
+        <div className="d-flex justify-content-center mt-4">
             <div className="col">
                 <div className="card text-center">
                     <img src={imgChamp} className="card-img-top" alt="champImage" />
@@ -35,7 +35,6 @@ const OnePostComponent = ({ postInfo }) => {
                     <p className="card-text">{description}</p>
                 </div>
             </div>
-
         </div>
     )
 }

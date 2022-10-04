@@ -1,5 +1,3 @@
-// import Carousel from 'react-bootstrap/Carousel';
-// import './SkinsCarouselComponent.css'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, EffectCards } from "swiper";
 import "swiper/css";

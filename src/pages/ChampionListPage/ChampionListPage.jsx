@@ -22,8 +22,14 @@ const ChampionListPage = () => {
     console.log(champions)
     return (
 
-        !champions
-            ? <Skeleton variant="rectangular" width={210} height={118} animation="wave" />
+        !champions.length
+            ? <div className="poroSpinner d-flex justify-content-center">
+                <Spinner role='status'>
+                    <video autoPlay muted loop plays-inline>
+                        <source src="https://res.cloudinary.com/dalk1vcw9/video/upload/v1663272676/Poro_base_AN_idle3_o5p599.mp4" />
+                    </video>
+                </Spinner>
+            </div>
             : <div className="championListCard">
                 {champions.map((champion) => {
                     return (

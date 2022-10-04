@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Volkhov:ital,wght@1,700&display=swap");
+
 * {
     margin: 0;
     padding: 0;
 }
 
 .App {
-    min-height: 100vh;
     background-color: #000a12;
+    min-height: 100vh;
 }

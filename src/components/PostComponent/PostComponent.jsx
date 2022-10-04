@@ -50,7 +50,9 @@ const PostComponent = ({ itemsAndChamp }) => {
 
                     <input type="hidden" className="form-control" name="imgChamp" onChange={updateNewPost} value=
                         {image} />
-                    <button type="submit" className="btn btn-warning mt-3">Submit</button>
+                    <div className="d-flex justify-content-center">
+                        <button type="submit" className="btn btn-warning mt-3">Submit</button>
+                    </div>
                 </div>
             </form>
         </>

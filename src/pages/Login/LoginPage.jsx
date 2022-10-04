@@ -42,51 +42,51 @@ const LoginPage = () => {
     };
 
     return (
-        <>
-            <Box
-                className='loginBox'
-            >
-                <Grid2 className='loginBox' container spacing={0}>
-                    <Grid2 xs={12} sm={6} md={3}>
-                        <Stack spacing={3}>
-                            <div className='loginHeader'>
-                                <a href="/"><img src={logoNegro} width="40" alt="Logo Random Legends" /></a>
-                                <div className="region">
-                                    <p>EUW</p>
-                                    <i id="globe"><img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Globe_icon_2.svg/800px-Globe_icon_2.svg.png"
-                                        alt='globe' width="20" /></i>
-                                </div>
+
+        <Box
+            className='loginBox'
+        >
+            <Grid2 className='loginBox' container spacing={0}>
+                <Grid2 xs={12} sm={6} md={3}>
+                    <Stack spacing={3}>
+                        <div className='loginHeader'>
+                            <a href="/"><img src={logoNegro} width="40" alt="Logo Random Legends" /></a>
+                            <div className="region">
+                                <p>EUW</p>
+                                <i id="globe"><img
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Globe_icon_2.svg/800px-Globe_icon_2.svg.png"
+                                    alt='globe' width="20" /></i>
                             </div>
-                            <div className="login-body">
-                                <p>LOGIN</p>
-                                <Link className="loginLinkToSignup" to='/signup'>Dont have an Account yet? Sign Up</Link>
-                                <form onSubmit={login}>
-                                    <input type="text" name="username" onChange={updateUser} placeholder="Username" required="required" />
+                        </div>
+                        <div className="login-body">
+                            <p>LOGIN</p>
+                            <Link className="loginLinkToSignup" to='/signup'>Dont have an Account yet? Sign Up</Link>
+                            <form onSubmit={login}>
+                                <input type="text" name="username" onChange={updateUser} placeholder="Username" required="required" />
 
-                                    <input type={showPass ? "text" : "password"} name="password" onChange={updateUser} placeholder="Password" required="required" />
+                                <input type={showPass ? "text" : "password"} name="password" onChange={updateUser} placeholder="Password" required="required" />
 
-                                    <a className="btn btn-secondary" onClick={() => { setShowPass(!showPass) }}>{showPass ? "Hide password" : "Show password"}</a>
-                                    <div className="arrowButton">
-                                        <Button variant="outlined" type="submit"><ArrowForwardIcon /></Button>
-                                    </div>
-                                </form>
-                                <div className='errorBoxAlign'>
-                                    {error && <h5 className='errorBox'>Username or Password Incorrect</h5>}
+                                <a className="btn btn-secondary" onClick={() => { setShowPass(!showPass) }}>{showPass ? "Hide password" : "Show password"}</a>
+                                <div className="arrowButton">
+                                    <Button variant="outlined" type="submit"><ArrowForwardIcon /></Button>
                                 </div>
-
+                            </form>
+                            <div className='errorBoxAlign'>
+                                {error && <h5 className='errorBox'>Username or Password Incorrect</h5>}
                             </div>
-                        </Stack>
-                    </Grid2>
-                    <Grid2 id="loginPicture" sm={6} md={9}>
-                        {/* <video autoPlay muted loop className="myLoginVideo">
+
+                        </div>
+                    </Stack>
+                </Grid2>
+                <Grid2 id="loginPicture" sm={6} md={9}>
+                    {/* <video autoPlay muted loop className="myLoginVideo">
                             <source src="https://res.cloudinary.com/dalk1vcw9/video/upload/v1664656377/aprilfools-2018-webm_v7xxos.webm" type="video/mp4" />
                         </video> */}
-                    </Grid2>
                 </Grid2>
+            </Grid2>
 
-            </Box>
-        </>
+        </Box>
+
     )
 }
 

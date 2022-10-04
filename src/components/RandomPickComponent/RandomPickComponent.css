@@ -1,14 +1,19 @@
 .randomChampName {
+    font-family: 'Volkhov', serif;
     position: absolute;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #c79b3b;
     text-shadow: 3px 3px white;
-    font-size: 7em;
-    margin-top: 45vh;
+    font-size: 3.5em;
+    align-self: flex-end;
 }
 
 .randomCard {
     background-color: #000a12;
+}
+
+.randomBox {
+    display: flex;
+    justify-content: center;
 }
 
 .randomButtonAlign {
@@ -18,8 +23,9 @@
 }
 
 .randomButton {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 30px;
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    margin-bottom: 10px;
     padding: 0px 40px;
     background-color: #c79b3b;
     color: white;
@@ -29,7 +35,7 @@
 
 
 .RandomChampImg {
-    width: 100vh;
+    width: 85%;
     border-radius: 25%;
     border: 10px solid #c79b3b;
 }

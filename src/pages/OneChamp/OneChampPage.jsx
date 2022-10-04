@@ -15,16 +15,19 @@ const OneChampPage = () => {
             .getChampionDetails(name)
             .then((champ) => {
                 setChampion(champ);
-                console.log(champion)
             })
             .catch((err) => console.log(err))
     }, []);
 
     if (!champion) {
         return (
-            <Spinner animation='border' role='status'>
-                <span className='visually-hidden'>Loading...</span>
-            </Spinner>
+            <div className="poroSpinner d-flex justify-content-center">
+                <Spinner role='status'>
+                    <video autoPlay muted loop plays-inline>
+                        <source src="https://res.cloudinary.com/dalk1vcw9/video/upload/v1663272676/Poro_base_AN_idle3_o5p599.mp4" />
+                    </video>
+                </Spinner>
+            </div>
         );
     }
 
