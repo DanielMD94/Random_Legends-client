@@ -12,6 +12,7 @@ const OneChampComponent = ({ oneChamp }) => {
     const { stats } = oneChamp
 
     const [show, setShow] = useState(false);
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
