@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import ProfileComponent from "../../components/ProfileComponent/ProfileComponent";
+import Tostadita from "../../components/ToastComponent/ToastComponent";
+import { MessageContext } from "../../context/message.context";
 import ProfileAxios from "../../services/profileAxios";
 import "./ProfilePage.css"
 
 const ProfilePage = () => {
+    const { showMessage, setShowMessage } = useContext(MessageContext)
     const { idUsername } = useParams();
     const profileAxios = new ProfileAxios()
     const [user, setUser] = useState(null)
@@ -31,13 +34,14 @@ const ProfilePage = () => {
                 </Spinner>
             </div>
         );
-    }
+    } else
 
-    return (
-        <div className="profilePage">
-            <ProfileComponent loggedUser={user} />
-        </div>
-    )
+        return (
+            <div className="profilePage">
+                <ProfileComponent loggedUser={user} />
+                {showMessage?.show && <Tostadita />}
+            </div>
+        )
 }
 
 

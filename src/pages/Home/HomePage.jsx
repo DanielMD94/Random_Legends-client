@@ -1,9 +1,22 @@
 import { Link } from "react-router-dom"
+import { useContext, useEffect } from "react"
 import "./HomePage.css"
-
+import Tostadita from "../../components/ToastComponent/ToastComponent"
+import { MessageContext } from "../../context/message.context"
 const HomePage = () => {
 
+    const { showMessage, setShowMessage } = useContext(MessageContext)
+
+    useEffect(() => {
+        setShowMessage({
+            show: true,
+            title: 'TIKITIKI 🍑',
+            message: 'MIAU MIAU'
+        })
+    }, [])
+
     return (
+
 
         <div className="homePage">
             <div className="overlay" />
@@ -20,6 +33,10 @@ const HomePage = () => {
                     </div>
                 </div>
             </Link>
+
+            {
+                showMessage?.show && <Tostadita />
+            }
 
         </div>
     )

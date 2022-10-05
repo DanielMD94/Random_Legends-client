@@ -5,8 +5,15 @@ class IndexAxios extends InitAxios {
         super('')
     }
 
-    getChampionList() {
-        return this.axios.get('/championsList').then((response) => response.data)
+    getChampionList(query) {
+        const { Fighter, Mage, Assassin, Support, Marksman, Tank } = query
+        console.log(query);
+        return this.axios.get(`/championsList?Fighter=${Fighter}&Mage=${Mage}&Assassin=${Assassin}&Support=${Support}&Marksman=${Marksman}&Tank=${Tank}`).then((response) => response.data)
+    }
+
+    getFindChamps(query) {
+        const { Fighter, Mage, Assassin, Support, Marksman, Tank } = query
+        return this.axios.get(`/searchChamp?Fighter=${Fighter}&Mage=${Mage}&Assassin=${Assassin}&Support=${Support}&Marksman=${Marksman}&Tank=${Tank}`)
     }
 
     getChampionDetails(name) {

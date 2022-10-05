@@ -13,25 +13,33 @@ const ChampionListPage = () => {
 
     const [champions, setAllChampions] = useState(null)
     const [copyChamps, setCopyChamps] = useState(null)
+    const [queries, setQueries] = useState({})
 
-
-    useEffect(() => {
+    const searchCheckBox = (queries) => {
+        console.log('esntro aquie?', queries)
         indexAxios
-            .getChampionList()
+            .getChampionList(queries)
             .then((championsAndImgs) => {
                 setAllChampions(championsAndImgs);
                 setCopyChamps(championsAndImgs)
 
             })
             .catch(err => console.log(err))
+    }
+
+
+    useEffect(() => {
+        console.log('esto son las queries en padre', queries)
+        searchCheckBox(queries)
     }, [])
-    console.log(champions)
+
+
     return (
 
         !champions && !copyChamps
             ? <div className="poroSpinner d-flex justify-content-center">
                 <Spinner role='status'>
-                    <video autoPlay muted loop plays-inline>
+                    <video autoPlay muted loop plays-inline='true' >
                         <source src="https://res.cloudinary.com/dalk1vcw9/video/upload/v1663272676/Poro_base_AN_idle3_o5p599.mp4" />
                     </video>
                 </Spinner>
@@ -43,7 +51,7 @@ const ChampionListPage = () => {
                     <SearchBarComponent championsAndSet={{ copyChamps, setAllChampions }} />
                 </div>
                 <div>
-                    <CheckBoxComponent championsAndSet={{ copyChamps, setAllChampions }} />
+                    <CheckBoxComponent ListQueries={{ setQueries, setAllChampions, searchCheckBox }} />
                 </div>
                 {
                     champions.length === 0 && <h1>Champ not found</h1>
