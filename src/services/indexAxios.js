@@ -7,7 +7,6 @@ class IndexAxios extends InitAxios {
 
     getChampionList(query) {
         const { Fighter, Mage, Assassin, Support, Marksman, Tank } = query
-        console.log(query);
         return this.axios.get(`/championsList?Fighter=${Fighter}&Mage=${Mage}&Assassin=${Assassin}&Support=${Support}&Marksman=${Marksman}&Tank=${Tank}`).then((response) => response.data)
     }
 

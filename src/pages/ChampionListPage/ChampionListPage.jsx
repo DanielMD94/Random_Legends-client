@@ -16,7 +16,6 @@ const ChampionListPage = () => {
     const [queries, setQueries] = useState({})
 
     const searchCheckBox = (queries) => {
-        console.log('esntro aquie?', queries)
         indexAxios
             .getChampionList(queries)
             .then((championsAndImgs) => {
@@ -29,7 +28,6 @@ const ChampionListPage = () => {
 
 
     useEffect(() => {
-        console.log('esto son las queries en padre', queries)
         searchCheckBox(queries)
     }, [])
 

@@ -17,6 +17,11 @@ class ProfileAxios extends InitAxios {
         return this.axios.put(`/${id}/update`, body).then((response) => response.data)
     }
 
+    addFavChamp(body) {
+        console.log(body)
+        return this.axios.put(`/addChampFav`, body).then((response) => response.data)
+    }
+
     deleteUser(id) {
         return this.axios.delete(`/${id}/delete`).then((response) => response.data)
     }

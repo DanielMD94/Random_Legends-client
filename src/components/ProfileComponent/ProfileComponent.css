@@ -35,3 +35,8 @@
 .cardBanner {
     margin-bottom: 1%;
 }
+
+.favChamp {
+    position: absolute;
+    z-index: 100;
+}

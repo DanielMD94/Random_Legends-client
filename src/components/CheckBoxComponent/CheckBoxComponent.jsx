@@ -19,28 +19,10 @@ const CheckBoxComponent = ({ ListQueries }) => {
 
     })
 
-    // useEffect(() => {
-    //     indexAxios.getFindChamps(selected)
-    //         .then((champions) => {
-    //             console.log('campeones filtrados', champions)
-    //         })
-    //         .catch(err => console.log(err))
-
-    // }, [selected])
-
-
-    // console.log('esto es el checkBox ', copyChamps)
     const searchChamps = (e) => {
         setSelected({ ...selected, [e.target.value]: e.target.checked })
         setQueries(selected)
         searchCheckBox({ ...selected, [e.target.value]: e.target.checked })
-        console.log({ ...selected, [e.target.value]: e.target.checked })
-        // indexAxios.getFindChamps(selected)
-        //     .then((champions) => {
-        //         console.log('campeones filtrados', champions)
-        //     })
-        //     .catch(err => console.log(err))
-
     }
 
 
