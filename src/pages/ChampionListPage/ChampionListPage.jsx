@@ -38,9 +38,8 @@ const ChampionListPage = () => {
             </div>
             :
             <>
-                <div>
-                    <h1>LA BARRA DE BUSQUEDA</h1>
-                    <SearchBarComponent championsAndSet={{ copyChamps, setAllChampions }} />
+                <div className="d-flex justify-content-center m-3">
+                    <SearchBarComponent className="searchBar" championsAndSet={{ copyChamps, setAllChampions }} />
                 </div>
                 <div>
                     <CheckBoxComponent championsAndSet={{ copyChamps, setAllChampions }} />

@@ -1,3 +1,7 @@
 #randomPickPosts {
-    margin-top: 10%;
+    margin-top: 4%;
+}
+
+.randomBox {
+    overflow: hidden;
 }

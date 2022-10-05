@@ -37,8 +37,8 @@ const RandomPickPage = () => {
     return (
 
         <Box className="randomBox">
-            <Grid2 className='randomPickBox' container spacing={0}>
-                <Grid2 xs={12} sm={12} md={8}>
+            <Grid2 className='randomPickBox d-flex justify-content-center mt-4' container spacing={4}>
+                <Grid2 xs={12} sm={12} md={6}>
                     < RandomPickComponent
                         myChampion={{ random, setRefresh }}
                     />

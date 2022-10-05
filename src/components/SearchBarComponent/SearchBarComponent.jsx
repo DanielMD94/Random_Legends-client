@@ -9,7 +9,7 @@ const SearchBarComponent = ({ championsAndSet }) => {
         setAllChampions(findChamp)
     }
     return (
-        <input onChange={searchProduct} type="text" />
+        <input className="championSearchBar" onChange={searchProduct} type="text" />
     )
 }
 

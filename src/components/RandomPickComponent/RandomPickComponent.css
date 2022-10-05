@@ -1,41 +1,37 @@
-.randomChampName {
-    font-family: 'Volkhov', serif;
-    position: absolute;
-    color: #c79b3b;
-    text-shadow: 3px 3px white;
-    font-size: 3.5em;
-    align-self: flex-end;
-}
-
 .randomCard {
+    background-color: rgba(0, 0, 0, 0);
+    padding-bottom: 10px;
+}
+
+.randomPickBg {
     background-color: #000a12;
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    border: 4px solid white;
+    transition: transform .5s ease;
 }
 
-.randomBox {
-    display: flex;
-    justify-content: center;
+.randomPickBg:hover {
+    transform: scale(0.9);
 }
 
-.randomButtonAlign {
-    display: flex;
-    justify-content: center;
-    margin-top: 1vh;
+.linkStyle {
+    text-decoration: none;
 }
 
-.randomButton {
-    font-family: 'Lora', serif;
-    font-size: 20px;
-    margin-bottom: 10px;
-    padding: 0px 40px;
-    background-color: #c79b3b;
+.randomChampName {
     color: white;
-    padding: 15px;
-    border-radius: 50%;
+    text-shadow: 5px 4px #000a12;
+    font-size: 3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif
 }
 
+.RandomItemImg {
+    border: 4px solid white;
+    transition: transform .5s ease;
+}
 
-.RandomChampImg {
-    width: 85%;
-    border-radius: 25%;
-    border: 10px solid #c79b3b;
+.RandomItemImg:hover {
+    transform: scale(1.3);
 }

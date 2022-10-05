@@ -8,6 +8,15 @@
     color: white;
 }
 
+.dropdownNavbar:hover {
+    color: #c79b3b;
+}
+
+.navbar-expand .navbar-nav .dropdown-menu {
+    position: absolute;
+    background-color: #212529
+}
+
 .link-react:hover {
     color: #c79b3b;
 }

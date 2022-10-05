@@ -8,7 +8,8 @@ const ChampionListComponent = ({ myChampion }) => {
     const { img, name } = myChampion
 
     return (
-        <Tilt glareEnable={true} glareMaxOpacity={0.3} glareColor="#FFFFFF" glarePosition="bottom" glareBorderRadius="10px">
+
+        <Tilt glareEnable={true} glareMaxOpacity={0} glareColor="#FFFFFF" glarePosition="bottom" glareBorderRadius="10px">
             <Link className="championListLink" to={`/champion-details/${name}`}>
                 <div style={{ backgroundImage: `url(${img})` }} className="card championsListBg">
                     <Card.Body>
@@ -17,6 +18,7 @@ const ChampionListComponent = ({ myChampion }) => {
                 </div>
             </Link>
         </Tilt>
+
     )
 }
 

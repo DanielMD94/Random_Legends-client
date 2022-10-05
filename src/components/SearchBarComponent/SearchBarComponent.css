@@ -1,0 +1,9 @@
+.championSearchBar input {
+    width: 300px;
+}
+
+.championSearchBar:focus {
+    border: 2px solid #111111;
+    background: #111111;
+    color: white;
+}
