@@ -12,25 +12,20 @@ import { MessageContext } from '../../context/message.context';
 const LoginPage = () => {
     const { user: me, isLoading, isLoggedIn, logOut } = useContext(AuthContext);
     const { showMessage, setShowMessage } = useContext(MessageContext)
-
-    useEffect(() => {
-        setShowMessage({
-            show: true,
-            title: me?.username + '🍑',
-            message: 'Cuanto tiempo sin verte'
-        })
-    }, [me])
-
-
-
-    console.log(me)
-
     const navigate = useNavigate();
     const [user, setUser] = useState({});
     const [error, setError] = useState(null)
     const [showPass, setShowPass] = useState(false)
     const { storeToken, authentication } = useContext(AuthContext);
     const authAxios = new AuthAxios()
+
+    useEffect(() => {
+        setShowMessage({
+            show: true,
+            title: user?.username + '🍑',
+            message: 'Cuanto tiempo sin verte'
+        })
+    }, [user])
 
     const login = (eventHTML) => {
         eventHTML.preventDefault();
@@ -44,7 +39,7 @@ const LoginPage = () => {
                 else {
                     storeToken(response.token)
                     authentication()
-                    navigate(`/profile/${me?._id}`) // EL USER ME LLEGA UNDEFINED (???)
+                    navigate(`/randomPick`)
                 }
             })
     };

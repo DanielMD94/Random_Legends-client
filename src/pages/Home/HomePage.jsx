@@ -24,7 +24,7 @@ const HomePage = () => {
                 <source src="https://res.cloudinary.com/dalk1vcw9/video/upload/v1664720524/c-o-kda-worlds-login_s4vfso.webm" />
             </video>
             <div className="content">
-                <img src="https://res.cloudinary.com/dalk1vcw9/image/upload/v1664458314/LogoDorado_Hor_mfhaba.png" alt="homeImage" />
+                <img className="logoHoriz" src="https://res.cloudinary.com/dalk1vcw9/image/upload/v1664458314/LogoDorado_Hor_mfhaba.png" alt="homeImage" />
             </div>
             <Link to='/login' className="homeBtnAlign">
                 <div className="box-3">

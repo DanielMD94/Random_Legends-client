@@ -11,6 +11,10 @@
     z-index: 50;
 }
 
+.logoHoriz {
+    margin-top: 5vh;
+}
+
 .content {
     display: flex;
     justify-content: center;
@@ -39,7 +43,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 6%;
+    margin-top: 14%;
     text-decoration: none;
 }
 
