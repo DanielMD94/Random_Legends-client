@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import './NavbarComponent.css'
@@ -35,20 +35,21 @@ const NavbarComponent = () => {
                             </Nav.Link>
                         </>
                         :
-                        <>
+                        <Navbar.Collapse>
                             <Nav.Link as='span' style={{ cursor: 'pointer' }} onClick={() => { setOpen(true) }}>Log out</Nav.Link>
-                            <Nav.Link as='span'>
-                                <Link className='link-react' to={`/profile/${user?._id}`}>{user?.username}</Link>
-                            </Nav.Link>
-                            <Nav.Link as='span'>
-                                <Link className='link-react' to="/randomPick">Random Pick</Link>
-                            </Nav.Link>
-                            <Nav.Link as='span'>
-                                <Link className='link-react' to="/champions">Champions</Link>
-                            </Nav.Link>
-                            <Nav.Link as='span'>
-                                <Link className='link-react' to="/weekly-rotation">Weekly Rotation</Link>
-                            </Nav.Link>
+
+                            <NavDropdown title="Discover" className="dropdownNavbar">
+                                <Nav.Link as='span'>
+                                    <Link className='link-react' to="/randomPick">Random Pick</Link>
+                                </Nav.Link>
+                                <Nav.Link as='span'>
+                                    <Link className='link-react' to="/champions">Champions</Link>
+                                </Nav.Link>
+                                <Nav.Link as='span'>
+                                    <Link className='link-react' to="/weekly-rotation">Weekly Rotation</Link>
+                                </Nav.Link>
+                            </NavDropdown>
+
                             <Nav.Link as='span'>
                                 <Link className='link-react' to="/forum">Forum</Link>
                             </Nav.Link>
@@ -59,7 +60,10 @@ const NavbarComponent = () => {
                                     <Link className='link-react' to="/admin">Admin</Link>
                                 </Nav.Link>
                             }
-                        </>
+                            <Nav.Link className='navProfile' as='span'>
+                                <Link className='link-react' to={`/profile/${user?._id}`}>{user?.username}</Link>
+                            </Nav.Link>
+                        </Navbar.Collapse>
                     }
                 </Nav>
             </Container>

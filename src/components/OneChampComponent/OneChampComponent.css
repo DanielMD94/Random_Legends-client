@@ -4,15 +4,18 @@
 }
 
 .championStatsRadar {
-    height: 55vh;
+    height: 45vh;
 }
 
 .oneChampName {
     text-align: center;
-
 }
 
 .oneChampName span {
     font-family: 'Volkhov', serif;
     font-size: xx-large
+}
+
+.modalChampName {
+    font-family: 'Volkhov', serif;
 }

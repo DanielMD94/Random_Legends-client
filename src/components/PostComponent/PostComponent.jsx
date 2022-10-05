@@ -30,7 +30,7 @@ const PostComponent = ({ itemsAndChamp }) => {
 
 
     return (
-        <>
+        <div className="postBody">
             <form onSubmit={createNewPost}>
                 <div>
                     <label htmlFor="" className="form-label text-light">Title:</label>
@@ -55,7 +55,7 @@ const PostComponent = ({ itemsAndChamp }) => {
                     </div>
                 </div>
             </form>
-        </>
+        </div>
     )
 }
 export default PostComponent

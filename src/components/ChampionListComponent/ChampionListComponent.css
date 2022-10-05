@@ -1,14 +1,15 @@
 .championListName {
     font-size: 3em;
-    /* font-family: 'Lora', serif; */
     font-family: 'Volkhov', serif;
     text-decoration: none;
     color: white;
     margin-top: 25%;
+    transition: transform .5s ease;
 }
 
 .championListName:hover {
     color: #c79b3b;
+    transform: scale(1.4);
 }
 
 .championsListBg {
@@ -16,6 +17,11 @@
     background-position: center;
     background-size: cover;
     height: 40vh;
+    transition: transform .5s ease;
+}
+
+.championsListBg:hover {
+    transform: scale(0.9);
 }
 
 .championListLink {
