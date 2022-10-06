@@ -15,8 +15,6 @@ const FavChampComponent = ({ champId }) => {
 
     const profileAxios = new ProfileAxios()
 
-
-
     const favChamp = () => {
         profileAxios.addFavChamp({ champId, fav: user?.favChamp.includes(champId) })
             .then(() => {
@@ -39,8 +37,6 @@ const FavChampComponent = ({ champId }) => {
                     </IconButton>
 
             }
-
-            {/* {user?.favChamp.includes(champId) && <p>'FAV2'</p>} */}
         </>
     )
 

@@ -20,13 +20,10 @@ const NavbarComponent = () => {
     return (
         <Navbar bg='dark' variant='dark'>
             <Container>
-                <Navbar.Brand as="span"><img className="NavbarLogo" src="https://res.cloudinary.com/dalk1vcw9/image/upload/v1663313193/LogoDorado_xilewd.png" /></Navbar.Brand>
+                <Link to="/" as="span"><img className="NavbarLogo" src="https://res.cloudinary.com/dalk1vcw9/image/upload/v1663313193/LogoDorado_xilewd.png" /></Link>
                 <Nav className='me-auto'>
                     {!isLoading && !isLoggedIn ?
                         <>
-                            <Nav.Link as='span'>
-                                <Link className='link-react' to="/">Home</Link>
-                            </Nav.Link>
                             <Nav.Link as='span'>
                                 <Link className='link-react' to="/login">Login</Link>
                             </Nav.Link>
