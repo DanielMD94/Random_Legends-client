@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import ForumAxios from "../../services/forumAxios"
 import './ForumPage.css'
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 
 const ForumPage = () => {
 
@@ -17,27 +18,30 @@ const ForumPage = () => {
     }, [])
 
     return (
-        <>
-            <div className="d-flex justify-content-center">
-                <ol className="container" id="lista">
-                    <div className="col">
-                        {
-                            posts.map(post => {
-                                return <Link to={`/forum/${post._id}`} key={post._id}>  <li><p>{post.title}</p></li></Link>
-                            })
-                        }
-                    </div>
-                </ol>
+        <div className='forumAlign col-12'>
+            <div className='forumPostContainer'>
+                {
+                    posts.map(post => {
+                        console.log(post)
+                        return (
+                            <Link className='forumPostLink' to={`/forum/${post._id}`} key={post._id}>
+                                <div className="linkContent">
+                                    <div>
+                                        <img className="forumPostImage" src={post.imgChamp} />
+                                    </div>
+                                    <div className="forumPostTitle">
+                                        {post.title}
+                                    </div>
+                                    <div className="forumEyeIcon">
+                                        <RemoveRedEyeIcon />
+                                    </div>
+                                </div>
+                            </Link>
+                        )
+                    })
+                }
             </div>
-
-            <div className="d-flex justify-content-center">
-                <video autoPlay muted loop plays-inline>
-                    <source src="https://res.cloudinary.com/dalk1vcw9/video/upload/v1663272676/Poro_base_AN_idle3_o5p599.mp4" />
-                </video>
-            </div>
-
-
-        </>
+        </div>
     )
 }
 

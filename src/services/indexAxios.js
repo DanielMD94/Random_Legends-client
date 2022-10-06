@@ -19,6 +19,10 @@ class IndexAxios extends InitAxios {
         return this.axios.get(`/champion-details/${name}`).then((response) => response.data)
     }
 
+    getChampionDetailsGraph(name) {
+        return this.axios.get(`/champion-details-graph/${name}`).then((response) => response.data)
+    }
+
     getRandomChampion() {
         return this.axios.get(`/randomPick`).then((response) => response.data)
     }

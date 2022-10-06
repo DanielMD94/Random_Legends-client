@@ -12,6 +12,7 @@ const ProfilePage = () => {
     const { idUsername } = useParams();
     const profileAxios = new ProfileAxios()
     const [user, setUser] = useState(null)
+    console.log(user)
 
     useEffect(() => {
         profileAxios
