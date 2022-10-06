@@ -34,7 +34,7 @@
     "legends": {
         "title": {
             "text": {
-                "fontSize": 15,
+                "fontSize": 20,
                 "fill": "#333333"
             }
         },

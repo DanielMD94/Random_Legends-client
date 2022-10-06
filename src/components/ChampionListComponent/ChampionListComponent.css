@@ -1,15 +1,11 @@
+@import 'https://fonts.googleapis.com/css?family=Reem+Kufi';
+
 .championListName {
     font-size: 3em;
-    font-family: 'Volkhov', serif;
+    font-family: 'Reem Kufi', sans-serif;
     text-decoration: none;
     color: white;
-    margin-top: 25%;
-    transition: transform .5s ease;
-}
-
-.championListName:hover {
-    color: #c79b3b;
-    transform: scale(1.4);
+    margin-top: 30%;
 }
 
 .championsListBg {
@@ -21,7 +17,7 @@
 }
 
 .championsListBg:hover {
-    transform: scale(0.9);
+    transform: scale(0.90);
 }
 
 .championListLink {

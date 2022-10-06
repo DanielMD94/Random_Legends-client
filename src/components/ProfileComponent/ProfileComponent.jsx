@@ -13,6 +13,8 @@ const ProfileComponent = ({ loggedUser }) => {
     console.log(loggedUser)
 
 
+
+
     return (
         <div>
             <div className="d-flex justify-content-center">
@@ -37,11 +39,6 @@ const ProfileComponent = ({ loggedUser }) => {
                         <p>Elo: {tier} {rank} {leaguePoints} points</p>
                         <p>Wins: {wins}</p>
                         <p>Losses: {losses}</p>
-                    </Card.Body>
-
-                    <Card.Body>
-                        <Card.Link href="#">Card Link</Card.Link>
-                        <Card.Link href="#">Another Link</Card.Link>
                     </Card.Body>
 
                 </Card>

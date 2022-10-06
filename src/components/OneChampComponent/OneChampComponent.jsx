@@ -1,32 +1,76 @@
 import './OneChampComponent.css'
 import { Link } from "react-router-dom"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SkinsCarousel from "../SkinsCarouselComponent/SkinsCarouselComponent"
 import { Card, Button, CardActionArea, CardActions, CardMedia, CardContent, Typography } from '@mui/material';
 import StatsGraphicComponent from '../StatsGraphicComponent/StatsGraphicComponent';
-import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
-import { Modal } from 'react-bootstrap';
+import { Modal, Form } from 'react-bootstrap';
+import IndexAxios from "../../services/indexAxios"
 
 
-const OneChampComponent = ({ oneChamp }) => {
-    const { stats } = oneChamp
-
+const OneChampComponent = ({ oneChamp, graphData }) => {
+    const indexAxios = new IndexAxios();
     const [show, setShow] = useState(false);
+    const [champions, setChampions] = useState([""]);
+    const [showSelect, setShowSelect] = useState('d-none');
+    const [champToCompare, setChampToCompare] = useState(null);
+    const [champs, setChamps] = useState([]);
+    const [smallStats, setSmallStats] = useState([{ label: "", "": "" }]);
+    const [bigStats, setBigStats] = useState([{ label: "", "": "" }]);
 
-    const handleClose = () => setShow(false);
+    //El useState va a recibir un objeto, como cuando carga la página no tiene dicho objeto aun, si no le das una estructura vacía igual al objeto; tira un error al intentar leer el gráfico las keys, es decir, necesitas un smallStats.label y un smallStats."" aunque carezcan de contenido para que cargue, cuando le seteas el objeto con el setSmallStats; renderiza de nuevo el componente con los datos del gráfico.
+
+    useEffect(() => {
+        setChampions([oneChamp.name])
+        setSmallStats(graphData.smallData);
+        setBigStats(graphData.bigData);
+    }, [])
+
+    const handleClose = () => {
+        setShow(false)
+        setShowSelect('d-none')
+        setChampions([oneChamp.name])
+        setSmallStats(graphData.smallData);
+        setBigStats(graphData.bigData);
+    };
     const handleShow = () => setShow(true);
+    const handleChange = (e) => setChampToCompare(e.target.value); //Coge el value de la option seleccionada en el select y lo mete en el estado
+    const handleCompare = () => {
+        setShowSelect('d-block');
+        indexAxios
+            .getAllChamps()
+            .then((response) => {
+                setChamps(response);
+            })
+            .catch((err) => console.log(err))
+    }
+    const letsCompare = () => {
+        let champs = champions;
+        let prevSmallStats = smallStats;
+        let prevBigStats = bigStats;
+        champs.push(champToCompare);
+        setShowSelect('d-none')
 
-    let smallStats = [
-        { label: 'ATTACK', '': stats.attackdamage },
-        { label: 'ARMOR', '': stats.armor },
-        { label: 'MAGIC RESISTANCE', '': stats.spellblock },
-    ]
+        indexAxios
+            .getChampionDetailsGraph(champToCompare)
+            .then((data) => {
+                data.smallData.map((object, index) => {
+                    prevSmallStats[index][champToCompare] = object[champToCompare];
+                })
 
-    let bigStats = [
-        { label: 'LIFE', '': stats.hp },
-        { label: 'MANA', '': stats.mp },
-        { label: 'MOVE SPEED', '': stats.movespeed }
-    ]
+                data.bigData.map((object, index) => {
+                    prevBigStats[index][champToCompare] = object[champToCompare];
+                })
+
+            })
+            .catch((err) => console.log(err))
+        setSmallStats(prevSmallStats)
+        setBigStats(prevBigStats)
+        setChampions(champs);
+        setShow(false)
+        setTimeout(() => { setShow(true) }, 200);
+    }
+
 
     return (
         <div>
@@ -76,10 +120,24 @@ const OneChampComponent = ({ oneChamp }) => {
                                 </Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
-                                <StatsGraphicComponent data={smallStats} />
-                                <StatsGraphicComponent data={bigStats} />
+                                <StatsGraphicComponent data={smallStats} champs={champions} />
+                                <StatsGraphicComponent data={bigStats} champs={champions} />
+                                <div className={showSelect}>
+                                    <Form.Select onChange={handleChange}>
+                                        <option>Select a champ to compare with</option>
+                                        {champs.map((data, index) => {
+                                            return (
+                                                <option key={index} value={data.id}>
+                                                    {data.name}
+                                                </option>
+                                            )
+                                        })}
+                                    </Form.Select>
+                                    <Button onClick={letsCompare}>Apply</Button>
+                                </div>
                             </Modal.Body>
                             <Modal.Footer>
+                                <Button id="compare" onClick={handleCompare}>Compare</Button>
                                 <Button onClick={handleClose}>Close</Button>
                             </Modal.Footer>
                         </Modal>
@@ -103,44 +161,3 @@ const OneChampComponent = ({ oneChamp }) => {
 }
 
 export default OneChampComponent
-
-
-
-//  <Modal show={show} onHide={handleClose}
-//                 size="lg"
-//                 aria-labelledby="contained-modal-title-vcenter"
-//                 centered>
-//                 <Modal.Header closeButton>
-//                     <Modal.Title id="contained-modal-title-vcenter">
-//                         User update
-//                     </Modal.Title>
-//                 </Modal.Header>
-//                 <Modal.Body>
-//                     <p className="text-dark text-center h2 mt-4">Editing as Admin: <span className="text-warning">{pg23.username} </span></p>
-//                     <div className="d-flex align-items-center flex-column">
-//                         <form onSubmit={update}>
-//                             <div className="mb-3">
-//                                 <label className="form-label text-dark">Username:</label>
-//                                 <input type="text" name="username" onChange={updateUser} value={userForUpdate.username} className="form-control" />
-//                                 <label className="form-label text-dark mt-3">Summoner Name:</label>
-//                                 <input type="text" name="summonerName" onChange={updateUser} value={userForUpdate.summonerName} className="form-control" />
-//                             </div>
-//                             <select className="form-select mt-3" name="role" onChange={updateUser} aria-label="Default select example">
-//                                 <option value="IRON">IRON</option>
-//                                 <option value="BRONZE">BRONZE</option>
-//                                 <option value="SILVER">SILVER</option>
-//                                 <option value="GOLD">GOLD</option>
-//                                 <option value="PLATINUM">PLATINUM</option>
-//                                 <option value="DIAMOND">DIAMOND</option>
-//                                 <option value="MASTER">MASTER</option>
-//                                 <option value="GRANDMASTER">GRANDMASTER</option>
-//                                 <option value="CHALLENGER">CHALLENGER</option>
-//                             </select>
-//                             <button type="submit" onClick={handleClose} className="btn btn-warning mt-3">Update!</button>
-//                         </form>
-//                     </div>
-//                 </Modal.Body>
-//                 <Modal.Footer>
-//                     <Button onClick={handleClose}>Close</Button>
-//                 </Modal.Footer>
-//             </Modal>
