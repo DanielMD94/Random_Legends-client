@@ -10,6 +10,7 @@ import ForumPage from '../pages/ForumPage/ForumPage';
 import ForumDetailsPage from '../pages/ForumDetailsPage/ForumDetailsPage'
 import ProfilePage from '../pages/Profile/ProfilePage';
 import AdminPage from '../pages/AdminPage/AdminPage';
+import RivalsPage from '../pages/RivalsPage/RivalsPage';
 
 
 
@@ -27,6 +28,7 @@ const AppRoutes = () => {
             <Route path='/profile/:idUsername' element={<ProfilePage />} />
             <Route path='/forum/:idPost' element={<ForumDetailsPage />} />
             <Route path='/admin' element={<AdminPage />} />
+            <Route path='/rivals' element={<RivalsPage />} />
         </Routes>
     )
 }

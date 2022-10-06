@@ -19,14 +19,6 @@ const LoginPage = () => {
     const { storeToken, authentication } = useContext(AuthContext);
     const authAxios = new AuthAxios()
 
-    useEffect(() => {
-        setShowMessage({
-            show: true,
-            title: user?.username + '🍑',
-            message: 'Cuanto tiempo sin verte'
-        })
-    }, [user])
-
     const login = (eventHTML) => {
         eventHTML.preventDefault();
         authAxios
@@ -39,10 +31,20 @@ const LoginPage = () => {
                 else {
                     storeToken(response.token)
                     authentication()
-                    navigate(`/randomPick`)
                 }
             })
     };
+
+    useEffect(() => {
+        if (me) {
+            setShowMessage({
+                show: true,
+                title: user?.username + '🍑',
+                message: 'Cuanto tiempo sin verte'
+            })
+            navigate(`/profile/${me._id}`)
+        }
+    }, [me])
 
     const updateUser = (eventHTML) => {
         const { value, name } = eventHTML.target;

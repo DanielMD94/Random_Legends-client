@@ -48,6 +48,9 @@ const NavbarComponent = () => {
                                 <Nav.Link as='span'>
                                     <Link className='link-react' to="/weekly-rotation">Weekly Rotation</Link>
                                 </Nav.Link>
+                                <Nav.Link as='span'>
+                                    <Link className='link-react' to="/rivals">Rivals</Link>
+                                </Nav.Link>
                             </NavDropdown>
 
                             <Nav.Link as='span'>

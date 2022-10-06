@@ -6,9 +6,11 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 
 const ProfileComponent = ({ loggedUser }) => {
-    const { foundUser, info, lvl } = loggedUser
+    const { user, matches } = loggedUser
+    const { foundUser, info, lvl } = user
     const { username, summonerName, role, favChamp } = foundUser
     const { rank, leaguePoints, losses, tier, wins } = info[0]
+    console.log(loggedUser)
 
 
     return (

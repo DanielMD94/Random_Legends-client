@@ -12,6 +12,7 @@ const ProfilePage = () => {
     const { idUsername } = useParams();
     const profileAxios = new ProfileAxios()
     const [user, setUser] = useState(null)
+    const [matches, setMatches] = useState(null)
 
     useEffect(() => {
         profileAxios
@@ -21,9 +22,14 @@ const ProfilePage = () => {
 
             })
             .catch((err) => console.log(err))
+        profileAxios
+            .getInfoMatches()
+            .then(allMatches => {
+                setMatches(allMatches)
+            })
     }, []);
 
-    if (!user) {
+    if (!user && !matches) {
         return (
             <div className="poroSpinner d-flex justify-content-center">
                 <Spinner role='status'>
@@ -37,7 +43,7 @@ const ProfilePage = () => {
 
         return (
             <div className="profilePage">
-                <ProfileComponent loggedUser={user} />
+                <ProfileComponent loggedUser={{ user, matches }} />
                 {showMessage?.show && <Tostadita />}
             </div>
         )
