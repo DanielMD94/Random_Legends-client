@@ -5,7 +5,7 @@ const RivalsPage = () => {
 
     const profileAxios = new ProfileAxios()
     const [matches, setMatches] = useState(null)
-    const [summonerName, setSummonerName] = useState({})
+    const [summonerName, setSummonerName] = useState({ summonerName: '' })
     const [refresh, setRefresh] = useState(null)
 
 
@@ -16,25 +16,30 @@ const RivalsPage = () => {
             .getRivalsMatches(summonerName)
             .then(Allmatches => {
                 setMatches(Allmatches)
+                setSummonerName({ summonerName: '' })
             })
             .catch((err) => console.log(err))
     }
 
     const updateSummonerName = (eventHTML) => {
         const { value, name } = eventHTML.target;
-        setSummonerName({ summonerName, [name]: value });
+        setSummonerName({ [name]: value });
     };
 
-    const otherSummoner = (summoner) => {
-        setSummonerName({ summonerName: summoner })
-
+    const otherSummoner = (summonerName) => {
+        profileAxios
+            .getRivalsMatches({ summonerName })
+            .then(Allmatches => {
+                setMatches(Allmatches)
+            })
+            .catch((err) => console.log(err))
     }
 
     console.log(matches)
     return (
         <>
             <form onSubmit={searchSummoner}>
-                <input className="championSearchBar" name="summonerName" onChange={updateSummonerName} type="text" />
+                <input className="championSearchBar" name="summonerName" onChange={updateSummonerName} type="text" value={summonerName.summonerName} />
                 <button type="submit" className="btn btn-warning mt-3">Update!</button>
             </form>
             {
