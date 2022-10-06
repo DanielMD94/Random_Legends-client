@@ -28,7 +28,7 @@ const OneChampPage = () => {
 
     }, []);
 
-    if (!champion && !theData) {
+    if (!champion || !theData) {
         return (
             <div className="poroSpinner d-flex justify-content-center">
                 <Spinner role='status'>

@@ -27,10 +27,10 @@ const FormCommentComponent = ({ reload }) => {
 
     return (
         <>
-            <form onSubmit={createNewComment}>
-                <div className="mt-3">
+            <form className="commentsForm" onSubmit={createNewComment}>
+                <div className="mt-4">
                     <label htmlFor="exampleFormControlTextarea1" className="form-label text-light">Comment:</label>
-                    <textarea className="form-control w-25" name="comment" onChange={updateNewComment} value={newComment.comment} rows="3"></textarea>
+                    <textarea className="form-control " name="comment" onChange={updateNewComment} value={newComment.comment} rows="3"></textarea>
                 </div>
                 <div>
                     <button type="submit" className="btn btn-warning mt-3">Submit</button>

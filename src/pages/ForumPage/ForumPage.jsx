@@ -22,7 +22,6 @@ const ForumPage = () => {
             <div className='forumPostContainer'>
                 {
                     posts.map(post => {
-                        console.log(post)
                         return (
                             <Link className='forumPostLink' to={`/forum/${post._id}`} key={post._id}>
                                 <div className="linkContent">

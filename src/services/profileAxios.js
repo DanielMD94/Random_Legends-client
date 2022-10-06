@@ -27,7 +27,6 @@ class ProfileAxios extends InitAxios {
     }
 
     addFavChamp(body) {
-        console.log(body)
         return this.axios.put(`/addChampFav`, body).then((response) => response.data)
     }
 

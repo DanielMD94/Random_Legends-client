@@ -5,18 +5,13 @@ import './OnePostComponent.css'
 const OnePostComponent = ({ postInfo }) => {
 
     const { post, canView } = postInfo
-    console.log(post)
     const { imgChamp, imgItems, title, description, user, } = post
     const { username, role } = user
 
-
-
-
-
     return (
 
-        <div className="d-flex justify-content-center mt-4">
-            <div className="col">
+        <div className="postInfo mt-4">
+            <div >
                 <div className="card text-center">
                     <img src={imgChamp} className="card-img-top" alt="champImage" />
                     <div className="card-body d-flex justify-content-around">
@@ -27,12 +22,12 @@ const OnePostComponent = ({ postInfo }) => {
                     </div>
                 </div>
             </div>
-            <div className="card text-bg-dark mb-3" >
-                <div className="card-header">Posted by: {username}
+            <div className="card text-bg-dark mb-3 " >
+                <div className="card-header text-center">Posted by: {username}
                     <p className="card-text">{role}</p>
                 </div>
                 <div className="card-body">
-                    <p className="card-text">{description}</p>
+                    <p className="card-text text-center">{description}</p>
                 </div>
             </div>
         </div>

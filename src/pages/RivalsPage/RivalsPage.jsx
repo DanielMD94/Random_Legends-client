@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import ProfileAxios from "../../services/profileAxios";
+import './RivalsPage.css'
+import SearchIcon from '@mui/icons-material/Search';
 const RivalsPage = () => {
 
     const profileAxios = new ProfileAxios()
@@ -34,14 +36,17 @@ const RivalsPage = () => {
             })
             .catch((err) => console.log(err))
     }
-
     console.log(matches)
     return (
         <>
-            <form onSubmit={searchSummoner}>
-                <input className="championSearchBar" name="summonerName" onChange={updateSummonerName} type="text" value={summonerName.summonerName} />
-                <button type="submit" className="btn btn-warning mt-3">Update!</button>
-            </form>
+            <div className="rivalsBoxSearch">
+                <form className="rivalsBoxSearch" onSubmit={searchSummoner}>
+                    <input className="rivalsInputSearch" name="summonerName" onChange={updateSummonerName} type="text" value={summonerName.summonerName} />
+                </form>
+            </div>
+            <div className="searchButtonAlign">
+                <button type="submit" className="btn btn-warning mt-3">Search</button>
+            </div>
             {
                 !matches
                     ?

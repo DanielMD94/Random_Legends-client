@@ -1,0 +1,21 @@
+.forumDetailsPage {
+    overflow: hidden;
+}
+
+.postAndComment {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.commentsAndForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.fixedComment {
+    height: 450px;
+    overflow: hidden;
+    overflow-y: scroll;
+}

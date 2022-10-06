@@ -1,7 +1,7 @@
 import ProfileAxios from "../../services/profileAxios";
 
 const DeleteUserComponent = ({ idUser, refreshAndUser }) => {
-    console.log(refreshAndUser)
+
     const { setRefreshUser, allUsers } = refreshAndUser
     const profileAxios = new ProfileAxios()
 

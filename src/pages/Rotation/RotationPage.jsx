@@ -12,7 +12,6 @@ const RotationPage = () => {
         indexAxios.getWeeklyRotation()
             .then((championsAndImgs) => {
                 setWeekChampions(championsAndImgs);
-                console.log("soy champs and imgs", championsAndImgs)
             })
             .catch((err) => console.log(err))
     }, [])

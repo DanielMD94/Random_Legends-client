@@ -5,7 +5,6 @@ import { MessageContext } from '../../context/message.context';
 
 
 const Tostadita = () => {
-    console.log('estoy entre vosotros?')
     const { showMessage, setShowMessage } = useContext(MessageContext)
     const { show, title, message } = showMessage
 

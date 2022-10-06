@@ -29,7 +29,7 @@ const ProfilePage = () => {
             })
     }, []);
 
-    if (!user && !matches) {
+    if (!user || !matches) {
         return (
             <div className="poroSpinner d-flex justify-content-center">
                 <Spinner role='status'>

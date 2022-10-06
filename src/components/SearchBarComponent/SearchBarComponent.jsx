@@ -1,3 +1,6 @@
+import SearchIcon from '@mui/icons-material/Search';
+import './SearchBarComponent.css'
+
 const SearchBarComponent = ({ championsAndSet }) => {
     const { copyChamps, setAllChampions } = championsAndSet
 
@@ -9,7 +12,10 @@ const SearchBarComponent = ({ championsAndSet }) => {
         setAllChampions(findChamp)
     }
     return (
-        <input className="championSearchBar" onChange={searchProduct} type="text" />
+        <div className="boxSearch">
+            <input className="inputSearch" onChange={searchProduct} type="text" />
+            <i><SearchIcon /></i>
+        </div>
     )
 }
 

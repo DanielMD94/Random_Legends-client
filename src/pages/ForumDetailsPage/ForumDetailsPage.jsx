@@ -1,4 +1,4 @@
-
+import './ForumDetailsPage.css'
 import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
@@ -32,7 +32,7 @@ const ForumDetailsPage = () => {
     }
 
     return (
-        <>
+        <div className='forumDetailsPage'>
             {
                 loading
                     ?
@@ -45,30 +45,40 @@ const ForumDetailsPage = () => {
                     </div>
                     :
                     <>
-                        (
-                        {
+                        {/* {
                             specifictPost.canView &&
                             <button className="btn btn-danger" onClick={deletePost}>DELETE POST</button>
-                        }
+                        } */}
+                        <div className="postAndComment">
 
-                        )
-                        <OnePostComponent postInfo={specifictPost} />
-                        <ul>
-                            {
-                                specifictPost.post.comment.map(comment => {
-                                    return (
-                                        <div key={comment._id}>
-                                            <h4>{comment.user.username}</h4>
-                                            <li> {comment.comment} </li>
-                                        </div>
-                                    )
-                                })
-                            }
-                        </ul>
-                        <FormCommentComponent reload={{ setRefresh, specifictPost }} />
+                            <div className='col-6'>
+                                <OnePostComponent postInfo={specifictPost} />
+                                {
+                                    specifictPost.canView &&
+                                    <button className="btn btn-danger hola " onClick={deletePost}>DELETE POST</button>
+                                }
+                            </div>
+
+                            <div className='commentsAndForm col-4'>
+                                <ul className='fixedComment'>
+                                    {
+                                        specifictPost.post.comment.map(comment => {
+                                            return (
+                                                <div key={comment._id}>
+                                                    <h4>{comment.user.username}</h4>
+                                                    <li> {comment.comment} </li>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </ul>
+                                <FormCommentComponent reload={{ setRefresh, specifictPost }} />
+                            </div>
+
+                        </div>
                     </>
             }
-        </>
+        </div>
     )
 }
 export default ForumDetailsPage

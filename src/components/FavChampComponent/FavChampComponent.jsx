@@ -5,13 +5,13 @@ import ProfileAxios from "../../services/profileAxios"
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { amber } from '@mui/material/colors';
+import './FavChampComponent.css'
 
 const color = amber[700];
 
 
 const FavChampComponent = ({ champId }) => {
     const { user, authentication } = useContext(AuthContext);
-    console.log(user)
 
     const profileAxios = new ProfileAxios()
 
@@ -20,7 +20,6 @@ const FavChampComponent = ({ champId }) => {
     const favChamp = () => {
         profileAxios.addFavChamp({ champId, fav: user?.favChamp.includes(champId) })
             .then(() => {
-                console.log('okey!')
                 authentication()
             })
             .catch((err) => console.log(err))
@@ -33,10 +32,10 @@ const FavChampComponent = ({ champId }) => {
             {
                 user?.favChamp.includes(champId)
                     ? <IconButton onClick={favChamp} sx={{ color }} aria-label="add to shopping cart">
-                        <FavoriteIcon />
+                        <FavoriteIcon id='ytb' />
                     </IconButton>
                     : <IconButton onClick={favChamp} sx={{ color }} aria-label="add to shopping cart">
-                        <FavoriteBorderIcon />
+                        <FavoriteBorderIcon id='ytb' />
                     </IconButton>
 
             }

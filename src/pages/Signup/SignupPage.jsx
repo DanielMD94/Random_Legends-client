@@ -19,7 +19,6 @@ const SignupPage = () => {
     const createNewUser = (eventHTML) => {
         eventHTML.preventDefault();
         authAxios.registro(newUser).then((response) => {
-            console.log(response);
             navigate('/login')
         });
     };
