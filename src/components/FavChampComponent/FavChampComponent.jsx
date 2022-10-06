@@ -11,16 +11,13 @@ const color = amber[700];
 
 const FavChampComponent = ({ champId }) => {
     const { user, authentication } = useContext(AuthContext);
-    console.log(user)
 
     const profileAxios = new ProfileAxios()
-
-
 
     const favChamp = () => {
         profileAxios.addFavChamp({ champId, fav: user?.favChamp.includes(champId) })
             .then(() => {
-                console.log('okey!')
+
                 authentication()
             })
             .catch((err) => console.log(err))
@@ -40,8 +37,6 @@ const FavChampComponent = ({ champId }) => {
                     </IconButton>
 
             }
-
-            {/* {user?.favChamp.includes(champId) && <p>'FAV2'</p>} */}
         </>
     )
 

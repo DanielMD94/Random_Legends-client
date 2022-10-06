@@ -1,15 +1,11 @@
+@import 'https://fonts.googleapis.com/css?family=Reem+Kufi';
+
 .championRotationName {
     font-size: 3em;
-    font-family: 'Volkhov', serif;
+    font-family: 'Reem Kufi', sans-serif;
     text-decoration: none;
     color: white;
-    margin-top: 25%;
-    transition: transform .5s ease;
-}
-
-.championRotationName:hover {
-    color: #c79b3b;
-    transform: scale(1.2);
+    margin-top: 30%;
 }
 
 .championsRotationBg {

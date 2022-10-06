@@ -1,7 +1,13 @@
-.cardProfileAlign {
-    margin-top: 5vh;
+@import 'https://fonts.googleapis.com/css?family=Reem+Kufi';
+
+.profileElements {
     display: flex;
     justify-content: center;
+    flex-direction: row;
+}
+
+.cardProfileAlign {
+    margin-top: 5vh;
 }
 
 .cardProfileInformation {
@@ -37,6 +43,49 @@
 }
 
 .favChamp {
-    position: absolute;
     z-index: 100;
+    margin-top: 8vh;
+}
+
+.scrollDiv {
+    height: 450px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0)
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #c79b3b;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #9c7522;
+}
+
+.favChampCard {
+    margin: 10px;
+}
+
+.favChampImg {
+    width: 170px;
+}
+
+.favChampName {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: large;
+    text-shadow: 3px 3px black;
+    color: white;
 }
