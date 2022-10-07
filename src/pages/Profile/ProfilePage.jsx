@@ -30,7 +30,7 @@ const ProfilePage = () => {
             })
             .catch((err) => console.log(err))
     }, []);
-    console.log('estoy en ProfilePage', matches)
+
     if (!user || !matches) {
         return (
             <div className="poroSpinner d-flex justify-content-center">

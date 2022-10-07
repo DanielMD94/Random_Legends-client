@@ -4,7 +4,6 @@ const HomePage = () => {
 
     return (
 
-
         <div className="homePage">
             <div className="overlay" />
             <video autoPlay muted loop className="myVideo">
@@ -20,8 +19,6 @@ const HomePage = () => {
                     </div>
                 </div>
             </Link>
-
-
         </div>
     )
 }

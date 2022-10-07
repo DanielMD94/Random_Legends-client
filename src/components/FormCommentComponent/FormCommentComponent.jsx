@@ -9,7 +9,6 @@ const FormCommentComponent = ({ reload }) => {
         comment: ''
     });
 
-
     const createNewComment = (eventHTML) => {
         eventHTML.preventDefault();
 

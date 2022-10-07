@@ -89,9 +89,6 @@ const LoginPage = () => {
                     </Stack>
                 </Grid2>
                 <Grid2 id="loginPicture" sm={6} md={9}>
-                    {/* <video autoPlay muted loop className="myLoginVideo">
-                            <source src="https://res.cloudinary.com/dalk1vcw9/video/upload/v1664656377/aprilfools-2018-webm_v7xxos.webm" type="video/mp4" />
-                        </video> */}
                 </Grid2>
             </Grid2>
 

@@ -3,15 +3,12 @@ import * as React from 'react';
 import Card from 'react-bootstrap/Card';
 import LastGamesComponent from "../LastGamesComponent/LastGamesComponent";
 
-
-
 const ProfileComponent = ({ loggedUser }) => {
     const { user, matches } = loggedUser
     const { foundUser, info, lvl } = user
     const { username, summonerName, role, favChamp } = foundUser
     const { rank, leaguePoints, losses, tier, wins } = info[0]
 
-    console.log('estoy en profileComponent', matches)
     return (
         <div>
 
@@ -63,12 +60,11 @@ const ProfileComponent = ({ loggedUser }) => {
                 </div>
 
             </div>
-            <div className="myLastGames">My last games</div>
+            <div className="myLastGames">Last Games</div>
             <div className="matchesBox">
-                <LastGamesComponent foundMatches={matches} name={username} />
+                <LastGamesComponent foundMatches={matches} name={summonerName} />
             </div>
         </div>
-
     )
 }
 

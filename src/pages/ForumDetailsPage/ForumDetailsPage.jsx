@@ -45,10 +45,7 @@ const ForumDetailsPage = () => {
                     </div>
                     :
                     <>
-                        {/* {
-                            specifictPost.canView &&
-                            <button className="btn btn-danger" onClick={deletePost}>DELETE POST</button>
-                        } */}
+
                         <div className="postAndComment">
 
                             <div className='col-6'>

@@ -7,8 +7,6 @@ const ChampionListComponent = ({ myChampion }) => {
 
     const { img, name, id } = myChampion
 
-
-
     return (
         <>
             <Link className="championListLink" to={`/champion-details/${name}`}>

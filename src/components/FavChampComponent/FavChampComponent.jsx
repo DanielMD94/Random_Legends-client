@@ -9,7 +9,6 @@ import './FavChampComponent.css'
 
 const color = amber[700];
 
-
 const FavChampComponent = ({ champId }) => {
     const { user, authentication } = useContext(AuthContext);
 
@@ -22,8 +21,6 @@ const FavChampComponent = ({ champId }) => {
             })
             .catch((err) => console.log(err))
     }
-
-
 
     return (
         <>
@@ -39,7 +36,6 @@ const FavChampComponent = ({ champId }) => {
             }
         </>
     )
-
 }
 
 export default FavChampComponent

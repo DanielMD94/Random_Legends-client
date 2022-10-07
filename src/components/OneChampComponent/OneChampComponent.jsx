@@ -18,8 +18,6 @@ const OneChampComponent = ({ oneChamp, graphData }) => {
     const [smallStats, setSmallStats] = useState([{ label: "", "": "" }]);
     const [bigStats, setBigStats] = useState([{ label: "", "": "" }]);
 
-    //El useState va a recibir un objeto, como cuando carga la página no tiene dicho objeto aun, si no le das una estructura vacía igual al objeto; tira un error al intentar leer el gráfico las keys, es decir, necesitas un smallStats.label y un smallStats."" aunque carezcan de contenido para que cargue, cuando le seteas el objeto con el setSmallStats; renderiza de nuevo el componente con los datos del gráfico.
-
     useEffect(() => {
         setChampions([oneChamp.name])
         setSmallStats(graphData.smallData);
@@ -34,7 +32,7 @@ const OneChampComponent = ({ oneChamp, graphData }) => {
         setBigStats(graphData.bigData);
     };
     const handleShow = () => setShow(true);
-    const handleChange = (e) => setChampToCompare(e.target.value); //Coge el value de la option seleccionada en el select y lo mete en el estado
+    const handleChange = (e) => setChampToCompare(e.target.value);
     const handleCompare = () => {
         setShowSelect('d-block');
         indexAxios
@@ -70,7 +68,6 @@ const OneChampComponent = ({ oneChamp, graphData }) => {
         setShow(false)
         setTimeout(() => { setShow(true) }, 200);
     }
-
 
     return (
         <div>

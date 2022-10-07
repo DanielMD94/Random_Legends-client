@@ -76,6 +76,14 @@ const RivalsPage = () => {
                                             return (
                                                 <div key={index} className="col-5 m-1">
                                                     <h5 style={{ color: 'orange' }}>{index ? "Red" : "Blue"} Team </h5>
+                                                    {
+                                                        teamsData[index].win === true
+                                                            ? <h5 style={{ color: 'green' }} >Win</h5>
+                                                            : <h5 style={{ color: 'red' }}>Lost</h5>
+                                                    }
+                                                    <h5 style={{ color: 'lightBlue' }}>{teamsData[index].teamKills}/{teamsData[index].teamDeadths}/{teamsData[index].teamAssists} </h5>
+                                                    <h5 style={{ color: 'purple' }}>TOWERS: {teamsData[index].tower}</h5>
+                                                    <h5 style={{ color: 'purple' }}>INHIBITORS: {teamsData[index].inhibitor}</h5>
                                                     <ul className="text-start" style={{ listStyleType: 'none' }}>
                                                         {playersData.map((player, index) => {
                                                             return (

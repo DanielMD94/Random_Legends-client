@@ -1,6 +1,4 @@
-
 import './OnePostComponent.css'
-
 
 const OnePostComponent = ({ postInfo }) => {
 
@@ -33,11 +31,5 @@ const OnePostComponent = ({ postInfo }) => {
         </div>
     )
 }
-
-
-
-
-
-
 
 export default OnePostComponent

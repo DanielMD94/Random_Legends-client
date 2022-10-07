@@ -84,32 +84,3 @@ const UpdateUserComponent = ({ user, refreshAndUser }) => {
 }
 
 export default UpdateUserComponent
-
-// {
-    //         view &&
-    //         <>
-                // <p className="text-light text-center h2 mt-4">Editing as Admin: <span class="text-warning">clavo </span></p>
-                //     <div class="d-flex align-items-center flex-column">
-                //         <form onSubmit={createNewUser}>
-                //             <div class="mb-3">
-                //                 <label for="a" class="form-label text-light">Username:</label>
-                //                 <input type="text" name="username" value="{{username}}" class="form-control" />
-                //                 <label for="a" class="form-label text-light mt-3">Summoner Name:</label>
-                //                 <input type="text" name="summonerName" value="{{summonerName}}" class="form-control" />
-                //             </div>
-                //             <select class="form-select mt-3" name="role" aria-label="Default select example">
-                //                 <option value="IRON">IRON</option>
-                //                 <option value="BRONZE">BRONZE</option>
-                //                 <option value="SILVER">SILVER</option>
-                //                 <option value="GOLD">GOLD</option>
-                //                 <option value="PLATINUM">PLATINUM</option>
-                //                 <option value="DIAMOND">DIAMOND</option>
-                //                 <option value="MASTER">MASTER</option>
-                //                 <option value="GRANDMASTER">GRANDMASTER</option>
-                //                 <option value="CHALLENGER">CHALLENGER</option>
-                //             </select>
-                //             <button type="submit" class="btn btn-warning mt-3">Update!</button>
-                //         </form>
-                //     </div>
-        //         </>
-        //     }

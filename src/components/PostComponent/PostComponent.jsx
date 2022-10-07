@@ -4,30 +4,25 @@ import { AuthContext } from "../../context/auth.context";
 import ForumAxios from "../../services/forumAxios";
 import './PostComponent.css'
 
-
 const PostComponent = ({ itemsAndChamp }) => {
     const { user, isLoading, isLoggedIn, logOut } = useContext(AuthContext);
     const { items, image } = itemsAndChamp
 
     const forumAxios = new ForumAxios()
-    const [newPost, setNewPost] = useState({});
+    const [newPost, setNewPost] = useState({})
     const navigate = useNavigate();
-    // Estad de error
-
     const createNewPost = (eventHTML) => {
         eventHTML.preventDefault();
         forumAxios.createPost(newPost).then(() => {
             navigate('/forum')
         })
             .catch((err) => console.log(err))
-    };
+    }
 
     const updateNewPost = (eventHTML) => {
         const { name, value } = eventHTML.target;
         setNewPost({ ...newPost, [name]: value, user: user._id, imgItems: items, imgChamp: image });
-    };
-
-
+    }
 
     return (
         <div className="postBody">

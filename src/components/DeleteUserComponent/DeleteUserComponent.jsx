@@ -15,8 +15,6 @@ const DeleteUserComponent = ({ idUser, refreshAndUser }) => {
 
     }
 
-
-
     return (
         <button className="btnProfile p-3 mx-2 card-link" onClick={userDelete}>Delete</button>
     )

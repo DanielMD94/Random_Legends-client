@@ -13,8 +13,6 @@ import Typography from '@mui/material/Typography';
 
 const LastGamesComponent = ({ foundMatches, name }) => {
 
-    console.log('Partiditassssss', foundMatches)
-
     return (
         <>
             {
@@ -22,7 +20,6 @@ const LastGamesComponent = ({ foundMatches, name }) => {
                     const teamsData = match.teamsData;
                     return (
                         <div className="lastGamesBox  text-center">
-
                             {
                                 teamsData.map((data, index) => {
                                     const { playersData } = data
@@ -67,18 +64,13 @@ const LastGamesComponent = ({ foundMatches, name }) => {
                                                         </Box>
 
                                                     </Card>
-
-
                                                 </>
                                             )
                                         }
                                     })
                                     )
-
                                 })
-
                             }
-
                         </div>
                     )
                 })

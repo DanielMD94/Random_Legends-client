@@ -12,7 +12,6 @@ const SignupPage = () => {
 
     const authAxios = new AuthAxios()
     const [newUser, setNewUser] = useState({});
-    // const [error, setError] = useState(null)
     const navigate = useNavigate();
 
 
@@ -27,7 +26,6 @@ const SignupPage = () => {
         const { name, value } = eventHTML.target;
         setNewUser({ ...newUser, [name]: value });
     };
-
 
     return (
         <>
@@ -63,12 +61,8 @@ const SignupPage = () => {
                         </Stack>
                     </Grid2>
                     <Grid2 id="signupPicture" sm={6} md={9}>
-                        {/* <video autoPlay muted loop className="mySignupVideo">
-                            <source src="https://res.cloudinary.com/dalk1vcw9/video/upload/v1664709203/project-hunters-animated-login_abofom.webm" type="video/mp4" />
-                        </video> */}
                     </Grid2>
                 </Grid2>
-
             </Box>
         </>
 

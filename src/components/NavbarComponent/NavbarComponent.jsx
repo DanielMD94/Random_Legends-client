@@ -15,8 +15,6 @@ const NavbarComponent = () => {
         logOut();
     }
 
-
-
     return (
         <Navbar bg='dark' variant='dark'>
             <Container>
