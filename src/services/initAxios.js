@@ -3,7 +3,7 @@ import axios from "axios";
 class InitAxios {
     constructor(path) {
         this.axios = axios.create({
-            baseURL: `http://localhost:5005${path}`
+            baseURL: `https://random-legends-react.herokuapp.com${path}`
         })
         this.axios.interceptors.request.use((config) => {
             const token = localStorage.getItem('tokenAuth')
