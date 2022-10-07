@@ -66,7 +66,7 @@ const OneChampComponent = ({ oneChamp, graphData }) => {
         setBigStats(prevBigStats)
         setChampions(champs);
         setShow(false)
-        setTimeout(() => { setShow(true) }, 200);
+        setTimeout(() => { setShow(true) }, 600);
     }
 
     return (
