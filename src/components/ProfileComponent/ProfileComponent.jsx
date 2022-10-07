@@ -1,7 +1,7 @@
 import "./ProfileComponent.css"
 import * as React from 'react';
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+import LastGamesComponent from "../LastGamesComponent/LastGamesComponent";
 
 
 
@@ -11,7 +11,7 @@ const ProfileComponent = ({ loggedUser }) => {
     const { username, summonerName, role, favChamp } = foundUser
     const { rank, leaguePoints, losses, tier, wins } = info[0]
 
-
+    console.log('estoy en profileComponent', matches)
     return (
         <div>
 
@@ -33,7 +33,7 @@ const ProfileComponent = ({ loggedUser }) => {
                         </div>
 
                         <Card.Body>
-                            <Card.Title className="text-warning">{username}: {role}</Card.Title>
+                            <Card.Title className="profileUsername" style={{ color: '#c79b3b' }}>{username}: {role}</Card.Title>
                             <img className="cardBanner" src="https://res.cloudinary.com/dalk1vcw9/image/upload/v1664735575/lolDecoration_axoqyx.png" width="450" alt="Banner" />
                             <p>Summoner Name: {summonerName}</p>
                             <p>Elo: {tier} {rank} {leaguePoints} points</p>
@@ -43,12 +43,13 @@ const ProfileComponent = ({ loggedUser }) => {
 
                     </Card>
                 </div>
+
                 <div className="favChamp">
                     <div className="scrollDiv">
                         {
                             favChamp.map(champ => {
                                 return (
-                                    <div key={champ.id} class="favChampCard card bg-dark text-white">
+                                    <div key={champ.id} className="favChampCard card bg-dark text-white">
                                         <img src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ.id}_0.jpg`} className="favChampImg card-img" alt="favChampImgAlt" />
                                         <div className="card-img-overlay favChampName">
                                             <p className="card-title">{champ.id}</p>
@@ -60,9 +61,11 @@ const ProfileComponent = ({ loggedUser }) => {
                         }
                     </div>
                 </div>
+
             </div>
+            <div className="myLastGames">My last games</div>
             <div className="matchesBox">
-                <p>Hola </p>
+                <LastGamesComponent foundMatches={matches} name={username} />
             </div>
         </div>
 

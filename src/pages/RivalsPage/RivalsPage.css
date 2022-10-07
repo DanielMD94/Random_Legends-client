@@ -3,11 +3,12 @@
 .rivalsBoxSearch {
     display: flex;
     justify-content: center;
+    margin-top: 5px;
 }
 
 .rivalsInputSearch {
     padding: 10px;
-    width: 80px;
+    width: fit-content;
     height: 60px;
     background: none;
     border: 4px solid #c79b3b;
@@ -23,7 +24,6 @@
 .rivalsBoxSearch:hover input {
     width: 350px;
     background: #000a12;
-    border-radius: 10px;
 }
 
 .rivalsBoxSearch i {
@@ -44,4 +44,14 @@
 .searchButtonAlign {
     display: flex;
     justify-content: center;
+    margin-left: 10px;
+}
+
+.searchButtonRivals {
+    border-radius: 50%;
+}
+
+.rivalsChampImage {
+    width: 100px;
+    margin: 10px;
 }

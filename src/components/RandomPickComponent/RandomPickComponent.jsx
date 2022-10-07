@@ -12,7 +12,7 @@ const RandomPickComponent = ({ myChampion }) => {
     }
 
     return (
-        <Card className="randomCard">
+        <Card key={myChampion.name} className="randomCard">
             <Tilt>
                 <Link className="linkStyle" to={`/champion-details/${random.randomChamp}`}>
                     <div style={{ backgroundImage: `url(${random.image})` }} className="card randomPickBg">

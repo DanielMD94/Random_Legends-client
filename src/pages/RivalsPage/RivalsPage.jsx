@@ -2,6 +2,10 @@ import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import ProfileAxios from "../../services/profileAxios";
 import './RivalsPage.css'
+import { Tooltip, IconButton } from "@mui/material";
+import { AutoGraph } from "@mui/icons-material";
+import HealthAndSafetyIcon from '@mui/icons-material/HealthAndSafety';
+import AccessibleForwardIcon from '@mui/icons-material/AccessibleForward';
 import SearchIcon from '@mui/icons-material/Search';
 const RivalsPage = () => {
 
@@ -9,7 +13,6 @@ const RivalsPage = () => {
     const [matches, setMatches] = useState(null)
     const [summonerName, setSummonerName] = useState({ summonerName: '' })
     const [refresh, setRefresh] = useState(null)
-
 
 
     const searchSummoner = (e) => {
@@ -36,17 +39,19 @@ const RivalsPage = () => {
             })
             .catch((err) => console.log(err))
     }
-    console.log(matches)
+
+
     return (
         <>
             <div className="rivalsBoxSearch">
                 <form className="rivalsBoxSearch" onSubmit={searchSummoner}>
                     <input className="rivalsInputSearch" name="summonerName" onChange={updateSummonerName} type="text" value={summonerName.summonerName} />
+                    <div className="searchButtonAlign">
+                        <button type="submit" className="searchButtonRivals btn btn-warning mt-3"><SearchIcon /></button>
+                    </div>
                 </form>
             </div>
-            <div className="searchButtonAlign">
-                <button type="submit" className="btn btn-warning mt-3">Search</button>
-            </div>
+
             {
                 !matches
                     ?
@@ -58,15 +63,63 @@ const RivalsPage = () => {
                         </Spinner>
                     </div>
                     :
-                    matches.map(match => {
-                        const { playersData } = match
-                        return playersData.map(player => {
-                            return (
-                                <button key={player.summonerName} onClick={() => otherSummoner(player.summonerName)} >{player.summonerName}</button>
-                            )
-                        })
-                    })
 
+                    matches.map((match, index) => {
+                        const teamsData = match.teamsData;
+                        return (
+                            <div className="container">
+                                <div key={index} className="row mt-3 text-center justify-content-center">
+                                    {<h3 style={{ color: 'orange' }}>Game {index + 1}</h3>}
+                                    {
+                                        teamsData.map((data, index) => {
+                                            const { playersData } = data
+                                            return (
+                                                <div key={index} className="col-5 m-1">
+                                                    <h5 style={{ color: 'orange' }}>{index ? "Red" : "Blue"} Team </h5>
+                                                    <ul className="text-start" style={{ listStyleType: 'none' }}>
+                                                        {playersData.map((player, index) => {
+                                                            return (
+                                                                <li key={index}>
+                                                                    <img className="rivalsChampImage" src={`http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${player.championName}_0.jpg`}></img>
+                                                                    <a
+                                                                        key={player.summonerName}
+                                                                        style={{ color: 'white', cursor: 'pointer', marginRight: '15px' }}
+                                                                        onMouseOver={(e) => { e.target.style.color = "blue" }}
+                                                                        onMouseLeave={(e) => { e.target.style.color = "white" }}
+                                                                        onClick={() => otherSummoner(player.summonerName)}
+                                                                    >
+                                                                        {player.summonerName}
+                                                                    </a>
+                                                                    <span style={{ color: 'lightBlue' }}>{player.kills + "/" + player.deaths + "/" + player.assists}</span>
+                                                                    <Tooltip title={"KDA - " + player.kda} arrow>
+                                                                        <IconButton>
+                                                                            <AutoGraph color='secondary' />
+                                                                        </IconButton>
+                                                                    </Tooltip>
+                                                                    <Tooltip title={"Damage dealt to Champions - " + player.totalDamageDealtToChampions} arrow>
+                                                                        <IconButton>
+                                                                            <AccessibleForwardIcon color='error' />
+                                                                        </IconButton>
+                                                                    </Tooltip>
+                                                                    <Tooltip title={"Damage taken - " + player.totalDamageTaken} arrow>
+                                                                        <IconButton>
+                                                                            <HealthAndSafetyIcon color='warning' />
+                                                                        </IconButton>
+                                                                    </Tooltip>
+                                                                </li>
+                                                            )
+                                                        })}
+                                                    </ul>
+                                                </div>
+                                            )
+
+                                        })
+
+                                    }
+                                </div>
+                            </div>
+                        )
+                    })
             }
         </>
     )

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import LastGamesComponent from "../../components/LastGamesComponent/LastGamesComponent";
 import ProfileComponent from "../../components/ProfileComponent/ProfileComponent";
 import Tostadita from "../../components/ToastComponent/ToastComponent";
 import { MessageContext } from "../../context/message.context";
@@ -27,8 +28,9 @@ const ProfilePage = () => {
             .then(allMatches => {
                 setMatches(allMatches)
             })
+            .catch((err) => console.log(err))
     }, []);
-
+    console.log('estoy en ProfilePage', matches)
     if (!user || !matches) {
         return (
             <div className="poroSpinner d-flex justify-content-center">
@@ -42,10 +44,12 @@ const ProfilePage = () => {
     } else
 
         return (
-            <div className="profilePage">
-                <ProfileComponent loggedUser={{ user, matches }} />
-                {showMessage?.show && <Tostadita />}
-            </div>
+            <>
+                <div className="profilePage">
+                    <ProfileComponent loggedUser={{ user, matches }} />
+                    {showMessage?.show && <Tostadita />}
+                </div>
+            </>
         )
 }
 

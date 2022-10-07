@@ -1,0 +1,10 @@
+.generalDiv {
+    color: white;
+}
+
+.lastGamesBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 10px;
+}

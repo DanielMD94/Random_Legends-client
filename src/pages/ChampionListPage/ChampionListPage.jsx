@@ -51,7 +51,7 @@ const ChampionListPage = () => {
                     <CheckBoxComponent ListQueries={{ setQueries, setAllChampions, searchCheckBox }} />
                 </div>
                 {
-                    champions.length === 0 && <h1>Champ not found</h1>
+                    champions.length === 0 && <img className="champNotFoundImg" src="https://res.cloudinary.com/dalk1vcw9/image/upload/v1665089824/Heimerdinger_2_twwcpd.jpg" alt="champNotFound" />
                 }
                 <div className="championListCard">
                     {champions.map((champion) => {
