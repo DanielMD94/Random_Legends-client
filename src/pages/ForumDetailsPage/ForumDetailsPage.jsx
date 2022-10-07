@@ -62,8 +62,8 @@ const ForumDetailsPage = () => {
                                         specifictPost.post.comment.map(comment => {
                                             return (
                                                 <div key={comment._id}>
-                                                    <h4>{comment.user.username}</h4>
-                                                    <li> {comment.comment} </li>
+                                                    <h4 className='mt-4' style={{ color: 'purple' }}>{comment.user.username}</h4>
+                                                    <li style={{ color: 'white' }}> {comment.comment} </li>
                                                 </div>
                                             )
                                         })
